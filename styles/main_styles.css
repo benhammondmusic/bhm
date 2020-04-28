@@ -14,7 +14,8 @@
 7. Shows
 8. Artist
 9. Extra
-10. Footer
+10. Milestones
+11. Footer
 
 
 ******************************/
@@ -27,6 +28,11 @@
 {
 	font-family: 'Futura';
 	src: url('../fonts/FuturaLT-Book.ttf')  format('truetype');
+}
+@font-face
+{
+	font-family: 'Futura_Bold';
+	src: url('../fonts/FuturaLT-Bold.ttf')  format('truetype');
 }
 
 /*********************************
@@ -46,7 +52,7 @@ body
 	font-family: 'Futura', sans-serif;
 	font-size: 14px;
 	font-weight: 400;
-	background: #000000;
+	background: #222222;
 	color: #FFFFFF;
 }
 div
@@ -148,13 +154,17 @@ h6::selection
 {
 	
 }
+img
+{
+	max-width: 100%;
+}
 button:active
 {
 	outline: none;
 }
 .form-control
 {
-	color: #db5246;
+	color: #8899BB;
 }
 section
 {
@@ -285,7 +295,7 @@ section
 	left: 0;
 	top: 0;
 	width: 100%;
-	background: #000000;
+	background: #222222;
 	z-index: 100;
 	-webkit-transition: all 400ms ease;
 	-moz-transition: all 400ms ease;
@@ -361,7 +371,7 @@ section
 }
 .log_reg ul li a:hover
 {
-	color: #de4f33;
+	color: #8899BB;
 }
 .main_nav ul li:not(:last-child)
 {
@@ -511,13 +521,13 @@ section
 {
 	display: none;
 	width: 100%;
-	background: #000000;
+	background: #222222;
 	padding-left: 40px;
 	padding-right: 40px;
 	padding-top: 8px;
 	padding-bottom: 8px;
 	margin-bottom: 5px;
-	border-bottom: solid 2px #de4f32;
+	border-bottom: solid 2px #8899BB;
 }
 .menu_log_reg a
 {
@@ -526,7 +536,7 @@ section
 }
 .menu_log_reg a:hover
 {
-	color: #de4f32;
+	color: #8899BB;
 }
 .menu_log_reg ul li
 {
@@ -544,12 +554,12 @@ section
 .menu_nav
 {
 	width: 100%;
-	background: #000000;
+	background: #222222;
 	padding-left: 40px;
 	padding-right: 40px;
 	padding-top: 50px;
 	padding-bottom: 50px;
-	border-bottom: solid 5px #de4f32;
+	border-bottom: solid 5px #8899BB;
 }
 .menu_nav ul li
 {
@@ -589,7 +599,7 @@ section
 }
 .menu_nav ul li a:hover
 {
-	color: #de4f32;
+	color: #8899BB;
 }
 
 /*********************************
@@ -637,7 +647,7 @@ section
 .home_slider.owl-theme .owl-dots .owl-dot.active span,
 .home_slider.owl-theme .owl-dots .owl-dot:hover span
 {
-	background: #000000;
+	background: #222222;
 }
 .home_container
 {
@@ -688,7 +698,7 @@ section
 	bottom: -4px;
 	width: 100%;
 	height: 22px;
-	background: #000000;
+	background: #222222;
 	content: '';
 	z-index: -1;
 	-webkit-transition: all 400ms ease;
@@ -699,7 +709,7 @@ section
 }
 .home_link a:hover::before
 {
-	background: #de4f33;
+	background: #8899BB;
 }
 
 /*********************************
@@ -740,7 +750,7 @@ section
 	right: 0;
 	width: 100%;
 	height: 100%;
-	background: #de4f32;
+	background: #8899BB;
 	z-index: 1;
 	-webkit-transition: all 1000ms ease;
 	-moz-transition: all 1000ms ease;
@@ -794,7 +804,7 @@ section
 {
 	width: 181px;
 	height: 42px;
-	background: #de4f32;
+	background: #8899BB;
 	text-align: center;
 }
 .featured_album_link a
@@ -926,7 +936,7 @@ section
 {
 	width: 100%;
 	height: 92px;
-	background: #FFFFFF;
+	background: #8899BB;
 	margin-top: 27px;
 	padding-left: 25px;
 	padding-right: 22px;
@@ -969,7 +979,7 @@ section
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
-	background: #de4f32;
+	background: #8899BB;
 	border: none;
 	cursor: pointer;
 	text-align: center;
@@ -1135,11 +1145,13 @@ section
 {
 	width: 100%;
 	height: 81px;
-	background: #333232;
+	/* background: #333232; */
+	background: #555454;
 	padding-left: 11px;
 	padding-right: 37px;
 	color: #FFFFFF;
 	font-size: 18px;
+	
 }
 .shows_list li a
 {
@@ -1151,9 +1163,11 @@ section
 }
 .show_date
 {
-	width: 78px;
+	/* width: 78px; */
+	width: 115px;
 	height: 60px;
-	background: #de4f32;
+	/* background: #8899BB; */
+	background: #8899BB;
 	line-height: 60px;
 	text-align: center;
 	margin-right: 23px;
@@ -1171,22 +1185,22 @@ section
 }
 .show_name a:hover
 {
-	color: #de4f32;
+	color: #8899BB;
 }
 .show_location
 {
 	width: calc(50% - 23px);
 	margin-left: 23px;
 }
-.show_shop
+/* .show_shop
 {
 	width: 120px;
 	height: 35px;
-	background: #000000;
+	background: #222222;
 }
 .show_shop:hover
 {
-	background: #de4f32;
+	background: #8899BB;
 }
 .show_shop a
 {
@@ -1195,7 +1209,71 @@ section
 	height: 100%;
 	line-height: 35px;
 	text-align: center;
+	margin-top: 21px;
+
 }
+
+.show_shop a::before
+{
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: -4px;
+	width: 100%;
+	height: 22px;
+	background: #222222;
+	content: '';
+	z-index: -1;
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-ms-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
+}
+.show_shop a:hover::before
+{
+	background: #222;
+} */
+
+.show_link
+{
+	/* margin-top: 21px; */
+}
+.show_link a
+{
+	position: relative;
+	padding-left: 12px;
+	padding-right: 12px;
+	/* font-size: 24px; */
+	color: #FFFFFF;
+	z-index: 0;
+}
+.show_link a::before
+{
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: -.2em;
+	width: 70px;
+	height: 1em;
+	background: #222222;
+	content: '';
+	z-index: -1;
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-ms-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
+}
+.show_link a:hover::before
+{
+	background: #8899BB;
+}
+
+
+
+
+
 
 /*********************************
 8. Artist
@@ -1204,7 +1282,7 @@ section
 .artist
 {
 	padding-bottom: 106px;
-	background: #000000;
+	background: #222222;
 }
 .artist_content
 {
@@ -1275,7 +1353,7 @@ section
 }
 .extra_container
 {
-	
+
 }
 .extra_content
 {
@@ -1285,6 +1363,7 @@ section
 	-ms-transform: translateY(-5px);
 	-o-transform: translateY(-5px);
 	transform: translateY(-5px);
+
 }
 .extra_title h1
 {
@@ -1292,13 +1371,13 @@ section
 }
 .extra_text
 {
-	margin-top: 4px;
+	margin-top: 4px;	
 }
 .extra_button
 {
 	width: 161px;
 	height: 46px;
-	background: #000000;
+	background: #222222;
 	margin-top: 35px;
 }
 .extra_button:hover
@@ -1317,7 +1396,52 @@ section
 }
 
 /*********************************
-10. Footer
+10. Milestones
+*********************************/
+
+.milestones
+{
+	padding-top: 108px;
+	padding-left: 50px;
+	padding-right: 52px;
+}
+.milestones_container
+{
+	padding-top: 180px;
+	padding-bottom: 107px;
+}
+.milestone_col
+{
+	margin-bottom: 80px;
+}
+.milestone_icon
+{
+	width: 48px;
+	height: 48px;
+}
+.milestone_icon img
+{
+	max-width: 100%;
+}
+.milestone_content
+{
+	padding-left: 26px;
+}
+.milestone_counter
+{
+	font-size: 60px;
+	color: #FFFFFF;
+	line-height: 0.75;
+}
+.milestone_text
+{
+	font-size: 14px;
+	color: #FFFFFF;
+	line-height: 0.75;
+	margin-top: 24px;
+}
+/*********************************
+11. Footer
 *********************************/
 
 .footer
@@ -1388,7 +1512,7 @@ section
 	right: 0;
 	width: 139px;
 	height: 50px;
-	background: #de4f32;
+	background: #8899BB;
 	border: none;
 	outline: none;
 	cursor: pointer;
