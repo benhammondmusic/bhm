@@ -1005,7 +1005,7 @@ section {
   padding-left: 11px;
   padding-right: 37px;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 16px;
 }
 .shows_list li a {
   color: #ffffff;
@@ -1017,9 +1017,9 @@ section {
   /* width: 78px; */
   width: 115px;
   height: 60px;
-  /* background: #8899BB; */
-  background: #8899bb;
-  line-height: 60px;
+  background: #8899BB;
+  line-height: 30px;
+  font-size: 14px;
   text-align: center;
   margin-right: 23px;
 }
@@ -1092,6 +1092,7 @@ section {
   /* font-size: 24px; */
   color: #ffffff;
   z-index: 0;
+  
 }
 .show_link a::before {
   display: block;
@@ -1188,6 +1189,7 @@ section {
 }
 .extra_title h1 {
   font-size: 60px;
+  text-align: end;
 }
 .extra_text {
   margin-top: 4px;
@@ -1199,7 +1201,6 @@ section {
   height: 46px;
   background: #222222;
   margin-top: 35px;
-  border-radius: 10px;
   background-clip: padding-box;
 }
 .extra_button:hover {
