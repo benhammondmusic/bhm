@@ -1175,7 +1175,7 @@ section {
 
 .extra {
   padding-left: 50px;
-  padding-right: 51px;
+  /* padding-right: 51px; */
 }
 .extra_container {
 }
@@ -1193,7 +1193,7 @@ section {
 }
 .extra_text {
   margin-top: 4px;
-  width: 40%;
+  width: 50%;
   text-align: end;
 }
 .extra_button {
