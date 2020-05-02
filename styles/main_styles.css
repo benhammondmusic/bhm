@@ -1139,7 +1139,7 @@ section {
 .artist_text p:not(:last-child) {
   margin-bottom: 30px;
 }
-.artist_sig {
+/* .artist_sig {
   margin-top: 51px;
   margin-left: 26px;
 }
@@ -1167,7 +1167,7 @@ section {
   -ms-transform: translateY(7px);
   -o-transform: translateY(7px);
   transform: translateY(7px);
-}
+} */
 
 /*********************************
 9. Extra
@@ -1193,7 +1193,7 @@ section {
 }
 .extra_text {
   margin-top: 4px;
-  width: 80%;
+  width: 40%;
   text-align: end;
 }
 .extra_button {
@@ -1204,7 +1204,7 @@ section {
   background-clip: padding-box;
 }
 .extra_button:hover {
-  background: rgba(0, 0, 0, 0.5);
+  background: #8899bb;
 }
 .extra_button a {
   display: block;
