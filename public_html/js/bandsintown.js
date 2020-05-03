@@ -12,7 +12,6 @@ async function fetchShows(sub) {
         showDate = moment(show.datetime).format('ddd, M/D');
         showTime = moment(show.datetime).format('h:mma z');
         let callToAction = "Info";
-        console.log(show);
         
         // if it's a LiveStream show change text 
         const minsUntil = moment(show.datetime).diff(moment(), 'minutes');
