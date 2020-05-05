@@ -107,7 +107,7 @@ $(document).ready(function()
     			animateIn: 'fadeInRight',
 				items:1,
 				loop:true,
-				autoplay:false,
+				autoplay:true,
 				autoplayTimeout:8000,
 				smartSpeed:1200,
 				autoplaySpeed:1200,
