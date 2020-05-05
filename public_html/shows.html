@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Ben Hammond - Song Builder</title>
+	<title>Ben Hammond - Shows</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Ben Hammond Song Builder">
@@ -26,8 +26,8 @@
 				<div class="logo"><a href="#"><img src="images/logo.svg" alt="Ben Hammond Logo" height="70px"></a></div>
 				<nav class="main_nav">
 					<ul class="d-flex flex-row align-items-start justify-content-start">
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="shows.html">Shows</a></li>
+						<li><a href="index.html">Home</a></li>
+						<li class="active"><a href="shows.html">Shows</a></li>
 						<li><a href="music.html">Music</a></li>
 						<li><a href="booking.html">Booking</a></li>
 						<li><a href="contact.html">Contact</a></li>
@@ -64,106 +64,59 @@
 
 		<!-- Home -->
 
-		<div class="home index">
-			<div class="home_slider_container">
+        <div class="home shows">
+            <div class="home_inner">
+                <!-- Image artist: https://unsplash.com/@yoannboyer -->
+                <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/contact.jpg" data-speed="0.8"></div>
+                <div class="home_container">
+                    <div class="home_content text-center">
+                        <div class="home_subtitle">Just us</div>
+                        <div class="home_title">Contact</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-				<!-- Home Slider -->
-				<div class="owl-carousel owl-theme home_slider">
 
-					<!-- Slide -->
-					<div class="owl-item">
-						<div class="background_image" style="background-image:url(images/index-bench.jpg)"
-							title="Photo by Scott Braun"></div>
-						<div class="home_container">
-							<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
-								<div class="home_content text-center">
-									<div class="home_subtitle">Colorado Song Builder</div>
-									<div class="home_title">
-										<h1>Professional Musician</h1>
-									</div>
-									<div class="home_link"><a href="#">Request Booking Info</a></div>
-								</div>
+		<!-- Shows -->
+		<a name="shows_section"></a>
+		<div class="shows">
+			
+			<div class="container">
+				<div class="row" style="z-index:10;">
+					<div class="col">
+						<div class="section_title_container">
+							<div class="section_subtitle">Events</div>
+							<div class="section_title">
+								<h1>Upcoming Shows</h1>
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="row shows_row">
 
-					<!-- Slide -->
-					<div class="owl-item">
-						<div class="background_image" style="background-image:url(images/index-headphones.jpg)" title="Photo by Scott Braun"></div>
-						<div class="home_container">
-							<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
-								<div class="home_content text-center">
-									<div class="home_subtitle">Colorado Song Builder</div>
-									<div class="home_title">
-										<h1>Artist Entertainer</h1>
-									</div>
-									<div class="home_link"><a href="#">Request Booking Info</a></div>
-								</div>
-							</div>
+					<!-- Shows List -->
+					<div class="col-lg-8 order-lg-1 order-2 shows_list_col">
+						<div class="shows_list_container">
+							
+							<ul id="shows" class="shows_list">
+							<!-- this UL gets populated with LIs containing gig info from bandsintown via JS-->
+							
+							</ul>
+						</div>
+					</div>
+
+					<!-- Shows Image -->
+					<div class="col-lg-4 order-lg-2 order-1">
+						<div class="shows_image">
+							<div class="image_overlay"></div>
+							<img src="images/shows.jpg" alt="Photo by Scott Braun">
 						</div>
 					</div>
 
 				</div>
 			</div>
 		</div>
-
-		<!-- Artist -->
-
-		<div class="artist">
-			<a name="about_section"></a>	
-				<div class="container">
-					<div class="row">
-	
-						<!-- Artist Image -->
-						<div class="col-lg-4 artist_image_col">
-							<div class="artist_image">
-								<img src="images/artist.png" alt="Photo by Jordan Voth">
-							</div>
-						</div>
-	
-						<!-- Artist Content -->
-						<div class="col-lg-7 offset-lg-1">
-							<div class="artist_content">
-								<div class="section_title_container">
-									<div class="section_subtitle">About</div>
-									<div class="section_title">
-										<h1>Ben Hammond</h1>
-									</div>
-								</div>
-								<div class="artist_text">
-									<p> "Funky… guitar-looping, beat-boxing, soul-singing… powerhouse Ben Hammond" (Sarasota
-										Herald Tribune) performs a wide range of groove-oriented acoustic mashups, original
-										compositions and reimagined cover songs.
-									</p>
-	
-									<p>For over two decades, Hammond has honed his diverse, energetic style and is consistently one of the most sought after musicians in those places he's called home, including most recently the Colorado Rocky Mountains and Front Range. As noted by the Portland Press Herald: "Hammond is a versatile musician who writes memorable originals, delivers when he decides to cover someone, and uses his guitar, voice and gadgets to create a sound that you want to keep hearing."
-									</p>
-								</div>
-								<div class="section_title_container">
-									<div class="section_subtitle">
-										View <a href="shows.html">Full Schedule</a>
-									</div>
-								
-									<div class="section_title">
-										<h1>Next Show</h1>
-									</div>
-									
-									
-								</div>
-								<div class="artist_text">
-									
-									<ul id="shows" class="shows_list">
-									<!-- this UL gets populated with LIs containing gig info from bandsintown via JS-->
-									
-									</ul>
-									
-								</div>
-							</div>
-						</div>
-	
-					</div>
-				</div>
-			</div>
 
 
 		<!-- Extra -->
@@ -195,70 +148,7 @@
 			</div>
 		</div>
 
-		<!-- Milestones -->
-
-		<div class="milestones">
-			<div class="milestones_container">
-				<div class="parallax_background parallax-window" data-parallax="scroll"
-					data-image-src="images/milestones.jpg" data-speed="0.8" title="Photo by Jordan Voth"></div>
-				<div class="container">
-					<div class="row milestones_row">
-
-						<!-- Milestone -->
-						<div class="col-xl-3 col-md-6 milestone_col">
-							<div class="milestone d-flex flex-row align-items-center justify-content-start">
-								<div class="milestone_icon"><img src="images/icon_4.svg"
-										alt="https://www.flaticon.com/authors/smashicons"></div>
-								<div class="milestone_content">
-									<div class="milestone_counter" data-end-value="895" data-sign-after="">0</div>
-									<div class="milestone_text">Songs in Repetoire</div>
-								</div>
-							</div>
-						</div>
-
-
-						<!-- Milestone -->
-						<div class="col-xl-3 col-md-6 milestone_col">
-							<div class="milestone d-flex flex-row align-items-center justify-content-start">
-								<div class="milestone_icon"><img src="images/icon_2.svg"
-										alt="https://www.flaticon.com/authors/smashicons"></div>
-								<div class="milestone_content">
-									<div class="milestone_counter" data-end-value="3" data-sign-after="k">0</div>
-									<div class="milestone_text">Public Performances</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Milestone -->
-						<div class="col-xl-3 col-md-6 milestone_col">
-							<div class="milestone d-flex flex-row align-items-center justify-content-start">
-								<div class="milestone_icon"><img src="images/icon_3.svg"
-										alt="https://www.flaticon.com/authors/smashicons"></div>
-								<div class="milestone_content">
-									<div class="milestone_counter" data-end-value="400" data-sign-after="+">0</div>
-									<div class="milestone_text">Private Events + Weddings</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Milestone -->
-						<div class="col-xl-3 col-md-6 milestone_col">
-							<div class="milestone d-flex flex-row align-items-center justify-content-start">
-								<div class="milestone_icon"><img src="images/icon_1.svg"
-										alt="https://www.flaticon.com/authors/smashicons"></div>
-								<div class="milestone_content">
-									<div class="milestone_counter" data-end-value="14" data-sign-after="k">0</div>
-									<div class="milestone_text">CDs Independently Sold</div>
-								</div>
-							</div>
-						</div>
-
-
-					</div>
-				</div>
-			</div>
-		</div>
-
+	
 
 		<!-- Footer -->
 
@@ -374,7 +264,7 @@
 	<script src="plugins/parallax-js-master/parallax.min.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/about.js"></script>
-	<script src="js/bandsintown.js"></script>
+    <script src="js/bandsintown.js"></script>
 	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js" type="text/javascript" ></script>
   
 

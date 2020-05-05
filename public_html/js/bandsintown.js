@@ -7,7 +7,7 @@ async function fetchShows(sub) {
     const response = await fetchResult;
     const jsonData = await response.json();
     let showList = "";
-    const displayLimit = 5;
+    const displayLimit = 1;
     jsonData.slice(0, displayLimit).forEach(show => {
         showDate = moment(show.datetime).format('ddd, M/D');
         showTime = moment(show.datetime).format('h:mma z');
@@ -24,9 +24,8 @@ async function fetchShows(sub) {
                     ${showDate}<br>${showTime}
                 </div>
             </div>
-            <div
-                class="show_info d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-start justify-content-center">
-                <div class="show_name"></div>
+            <div class="show_info d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-start justify-content-center">
+                <!--<div class="show_name"></div>-->
                 <div class="show_location">${show.title}</div>
             </div>
 
