@@ -13,7 +13,6 @@
 	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-	<!-- <link rel="stylesheet" type="text/css" href="styles/contact.css"> -->
 	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
 </head>
 <body>
@@ -23,18 +22,12 @@
 	<!-- Header -->
 	<header class="header">
 		<div class="header_content d-flex flex-row align-items-center justify-content-center">
-			<div class="logo"><a href="#">Mixtape</a></div>
-			<!-- <div class="log_reg">
-				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Register</a></li>
-				</ul>
-			</div> -->
+			<div class="logo"><a href="#"><img src="images/logo.svg" alt="Ben Hammond Logo" height="70px"></a></div>
 			<nav class="main_nav">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
 					<li><a href="index.html">Home</a></li>
-					<li><a href="index.html#shows_section">Shows</a></li>
-					<li><a href="index.html#about_section">About</a></li>
+					<li><a href="shows.html">Shows</a></li>
+					<li><a href="music.html">Music</a></li>
 					<li><a href="booking.html">Booking</a></li>
 					<li class="active"><a href="contact.html">Contact</a></li>
 				</ul>
@@ -55,17 +48,11 @@
 		<div>
 			<div class="menu_overlay"></div>
 			<div class="menu_container d-flex flex-column align-items-start justify-content-center">
-				<!-- <div class="menu_log_reg">
-					<ul class="d-flex flex-row align-items-start justify-content-start">
-						<li><a href="#">Login</a></li>
-						<li><a href="#">Register</a></li>
-					</ul>
-				</div> -->
 				<nav class="menu_nav">
 					<ul class="d-flex flex-column align-items-start justify-content-start">
 						<li><a href="index.html">Home</a></li>
-						<li><a href="#shows_section">Shows</a></li>
-						<li><a href="#about_section">About</a></li>
+						<li><a href="shows.html">Shows</a></li>
+						<li><a href="music.html">Music</a></li>
 						<li><a href="booking.html">Booking</a></li>
 						<li><a href="contact.html">Contact</a></li>
 					</ul>
@@ -76,14 +63,13 @@
 
 	<!-- Home -->
 
-	<div class="home">
+	<div class="home cont">
 		<div class="home_inner">
-			<!-- Image artist: https://unsplash.com/@yoannboyer -->
 			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/contact.jpg" data-speed="0.8"></div>
 			<div class="home_container">
-				<div class="home_content text-center">
-					<div class="home_subtitle">Just us</div>
-					<div class="home_title">Contact</div>
+				<div class="home_content">
+					<div class="home_subtitle">Ben Hammond</div>
+					<div class="home_title"><h1>Contact</h1></div>
 				</div>
 			</div>
 		</div>
@@ -132,16 +118,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="social">
-							<ul class="d-flex flex-row align-items-center justify-content-start">
-								<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-							</ul>
-						</div>
+					
 					</div>
 				</div>
 			</div>
@@ -151,10 +128,11 @@
 	<!-- Footer -->
 
 	<footer class="footer">
+		<a name="contact_section"></a>
 		<div class="footer_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
 			<div class="newsletter_container">
 				<div class="newsletter_title">
-					<h2>Subscribe to the email list</h2>
+					Join the Mailing List
 				</div>
 				<!-- Begin Mailchimp Signup Form -->
 				<div id="mc_embed_signup">
@@ -164,56 +142,71 @@
 						<!-- <label for="mce-EMAIL">Subscribe</label> -->
 							<input type="email" value="" name="EMAIL" class="email newsletter_input" id="mce-EMAIL" placeholder="email address" required="required">
 							<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-							<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_24021f91024f3c0e90c50eaf3_dc677a6554" tabindex="-1" value=""></div>
-							<div class="clear newsletter_button_wrapper">
-								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter_button">
+							<div style="position: absolute; left: -5000px;" aria-hidden="true">
+								<input type="text" name="b_24021f91024f3c0e90c50eaf3_dc677a6554" tabindex="-1" value="">
 							</div>
+
+							<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter_button">
 						</div>
 					</form>
 				</div>
 				<!--End mc_embed_signup-->
 
 			</div>
+			<!-- Connect -->
+			<div class="align-items-center d-flex flex-sm-row flex-column ml-xl-auto">
+				<div class="social_container">
+					<div class="social_title">
+						Connect
+					</div>
+							
+					<div class="social">
+						<ul class="d-flex flex-row align-items-center justify-content-start">
+							<li><a target="_blank" href="http://www.facebook.com/benhammondmusicpage" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a target="_blank" href="https://www.instagram.com/benhammondmusic" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a target="_blank" href="https://twitter.com/benhammondmusic" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="social_container">
+					<div class="social_title">
+						Listen
+					</div>
+							
+					<div class="social">
+						<ul class="d-flex flex-row align-items-center justify-content-start">
+							<li><a target="_blank" href="https://open.spotify.com/artist/1q9zbsAcxs9fP7b9G8Y4Qk?si=GZE5O5EoSaCKM99kfeN79w" title="Spotify"><i class="fa fa-spotify" aria-hidden="true"></i></a></li>
+							<li><a target="_blank" href="https://music.apple.com/us/artist/ben-hammond/164875823" title="Apple Music"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
+							<li><a target="_blank" href="http://www.youtube.com/benhammondmusicpage" title="Youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
 
 
+			<div class="footer_lists d-flex flex-sm-row flex-column align-items-center justify-content-start ml-xl-auto">
 
-			<div
-				class="footer_lists d-flex flex-sm-row  flex-column align-items-start justify-content-start ml-xl-auto">
-
-				<!-- Useful Links -->
 				<div class="footer_list">
-					<div class="footer_list_title">Useful Links</div>
+					<div class="footer_list_title">Menu</div>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About us</a></li>
-						<li><a href="#">Testimonials</a></li>
-						<li><a href="./songlist.html">Song List</a></li>
-						<li><a href="blog.html">News</a></li>
+						<li><a href="shows.html">Shows</a></li>
+						<li><a href="music.html">Music</a></li>
+						<li><a href="booking.html">Booking</a></li>
+						<li><a href="contact.html">Contact</a></li>
 					</ul>
 				</div>
 
-				<!-- Mixtape -->
 				<div class="footer_list">
-					<div class="footer_list_title">Mixtape</div>
+					<div class="footer_list_title">More Info</div>
 					<ul>
-						<li><a href="#">Music</a></li>
-						<li><a href="#">PR & Marketing</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">About us</a></li>
-						<li><a href="#">Testimonials</a></li>
-					</ul>
-				</div>
-
-				<!-- Connect -->
-				<div class="footer_list">
-					<div class="footer_list_title">Connect</div>
-					<ul>
-						<li><a href="#">Returns</a></li>
-						<li><a href="#">Shippings</a></li>
-						<li><a href="#">Jobs</a></li>
-						<li><a href="#">Social Media</a></li>
-						<li><a href="#">Soundcloud</a></li>
+						<li><a href="#">Important</a></li>
+						<li><a href="live.html">Live-Streaming</a></li>
+						<li><a href="songlist.html">Song List</a></li>
+						<li><a href="faq.html">FAQ</a></li>
+						<li><a href="#">Email</a></li>
 					</ul>
 				</div>
 

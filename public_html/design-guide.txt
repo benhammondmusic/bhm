@@ -1,3 +1,4 @@
 Orange/Brown Color: #c87137 (200,113,55)
 Light Blue: #8899bb
+Translucent Gray: rgba(50, 50, 50, 0.50);
 

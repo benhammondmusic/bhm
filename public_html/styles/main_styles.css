@@ -554,8 +554,15 @@ section {
 .home.index {
   height: 892px;
 }
-.home.contact, .home.music, .home.shows, .home.booking {
+.home.music, .home.shows, .home.booking {
   height: 345px;
+}
+.home.cont {
+  padding-top: 100px;
+  height: 500px;
+}
+.home.inner {
+  
 }
 .home_slider_container {
   width: 100%;
@@ -595,11 +602,20 @@ section {
   z-index: 1;
   padding-top: 72px;
 }
+.cont .home_container {
+  text-align: center;
+  justify-content: center;
+  margin-left: 15%;
+  /* outline: 4px solid purple; */
+}
 .home_container_inner {
   width: 100%;
   height: 100%;
+  
+  
 }
 .home_content {
+  /* outline: 4px solid purple; */
 }
 .home_subtitle {
   font-size: 18px;
@@ -609,7 +625,7 @@ section {
   margin-top: 24px;
 }
 .home_title h1 {
-
+  /* this is set by display size in responsive.css  */
 }
 .home_link {
   margin-top: 21px;
@@ -681,12 +697,14 @@ section {
   width: 100%;
   height: 81px;
   /* background: #333232; */
-  background: #555454;
+  background: #555555;
   padding-left: 11px;
   padding-right: 37px;
   color: #ffffff;
   font-size: 16px;
 }
+
+
 .shows_list li a {
   color: #ffffff;
 }
