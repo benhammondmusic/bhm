@@ -371,6 +371,7 @@ section {
   z-index: -1;
   visibility: hidden;
   opacity: 0;
+  /* unclear what this speed controls */
   -webkit-transition: all 400ms ease;
   -moz-transition: all 400ms ease;
   -ms-transition: all 400ms ease;
@@ -398,6 +399,7 @@ section {
 .hamburger > div > div {
   height: 2px;
   background: #ffffff;
+  /* speed of hamburger bar hover expansion */
   -webkit-transition: all 400ms ease;
   -moz-transition: all 400ms ease;
   -ms-transition: all 400ms ease;
@@ -430,11 +432,12 @@ section {
   z-index: 101;
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: all 800ms ease;
-  -moz-transition: all 800ms ease;
-  -ms-transition: all 800ms ease;
-  -o-transition: all 800ms ease;
-  transition: all 800ms ease;
+  /* speed of pop out menu background opacity fade in */
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -ms-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
 }
 .menu_overlay {
   position: absolute;
@@ -462,11 +465,12 @@ section {
   transform: translateY(-50%);
   right: -300px;
   width: 300px;
-  -webkit-transition: all 1000ms 600ms ease;
-  -moz-transition: all 1000ms 600ms ease;
-  -ms-transition: all 1000ms 600ms ease;
-  -o-transition: all 1000ms 600ms ease;
-  transition: all 1000ms 600ms ease;
+  /* speed of popout menu slide in, length of delay before the slide, after background fade  */
+  -webkit-transition: all 200ms 200ms ease;
+  -moz-transition: all 200ms 200ms ease;
+  -ms-transition: all 200ms 200ms ease;
+  -o-transition: all 200ms 200ms ease;
+  transition: all 200ms 200ms ease;
 }
 .menu.active .menu_container {
   right: 0;
@@ -502,7 +506,8 @@ section {
 }
 .menu_nav {
   width: 100%;
-  background: #555555;
+  /* background: #222222; */
+  background: rgba(50, 50, 50, 0.80);
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 50px;
@@ -816,6 +821,7 @@ section {
   /* padding-right: 51px; */
 }
 .extra_container {
+  
 }
 .extra_content {
   height: 448px;
@@ -824,15 +830,19 @@ section {
   -ms-transform: translateY(-5px);
   -o-transform: translateY(-5px);
   transform: translateY(-5px);
+  
 }
 .extra_title h1 {
   font-size: 60px;
   text-align: end;
+  background: rgba(50, 50, 50, 0.50);
+  
 }
 .extra_text {
   margin-top: 4px;
-  width: 50%;
+  width: 40%;
   text-align: end;
+  background: rgba(50, 50, 50, 0.50);
 }
 .extra_button {
   width: 161px;
@@ -964,12 +974,13 @@ section {
   border: 0px;
   margin-top: 5px;
   display: inline-block;
-  /* color: #ffffff; */
+  color: #ffffff;
   font-size: 14px;
   text-align: center;
 }
 .newsletter_button:hover {
   background: #FFFFFF;
+  color: #000000;
 }
 
 .social_container {
@@ -1096,3 +1107,113 @@ Song List
 Contact
 *********************************/
 
+.contact
+{
+	padding-top: 101px;
+	padding-bottom: 105px;
+}
+.contact_title
+{
+	font-size: 36px;
+	color: #FFFFFF;
+	line-height: 1.2;
+}
+.contact_form
+{
+	display: block;
+	width: 100%;
+	margin-top: 59px;
+}
+.contact_input
+{
+  color: #ffffff;
+  position: relative;
+	width: 100%;
+	height: 50px;
+	background: #343434;
+	border: none;
+	outline: none;
+	padding-left: 25px;
+	border-bottom: solid 3px transparent;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.contact_input:hover,
+.contact_input:focus
+{
+	border-bottom: solid 3px #c87137;
+}
+.contact_textarea
+{
+	height: 161px;
+	padding-top: 18px;
+}
+.contact_form input:not(:last-child)
+{
+	margin-bottom: 20px;
+}
+.contact_input::-webkit-input-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #FFFFFF !important;
+}
+.contact_input:-moz-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #FFFFFF !important;
+}
+.contact_input::-moz-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #FFFFFF !important;
+} 
+.contact_input:-ms-input-placeholder
+{ 
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #FFFFFF !important;
+}
+.contact_input::input-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #FFFFFF !important;
+}
+.contact_button
+{
+	width: 173px;
+	height: 50px;
+	background: #8899bb;
+	color: #FFFFFF;
+	font-size: 14px;
+	border: solid 3px #222222;
+	outline: none;
+	cursor: pointer;
+	margin-top: 39px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.contact_button:hover
+{
+	background: #FFFFFF;
+  color: #000000;
+
+}
+.contact_text
+{
+	margin-top: 30px;
+}
