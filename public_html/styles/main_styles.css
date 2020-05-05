@@ -557,7 +557,7 @@ section {
 .home.music, .home.shows, .home.booking {
   height: 345px;
 }
-.home.cont {
+.home.cont, .home.music, .home.shows {
   padding-top: 100px;
   height: 500px;
 }
@@ -602,7 +602,7 @@ section {
   z-index: 1;
   padding-top: 72px;
 }
-.cont .home_container {
+.cont .home_container, .music .home_container, .shows .home_container {
   text-align: center;
   justify-content: center;
   margin-left: 15%;
