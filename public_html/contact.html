@@ -85,11 +85,14 @@
 				<div class="col-lg-6">
 					<div class="contact_form_container">
 						<div class="contact_title">Send us a message</div>
+						
+						<!-- for email sent / error message -->
+						<div id="form-messages"></div>
+						
 						<form method="POST" action="contact.php" class="contact_form" id="contact_form">
-							<input type="text" name="name" class="contact_input" placeholder="Your Name" required="required">
-							<input type="email" name="email" class="contact_input" placeholder="Your Email Address" required="required">
-							<!-- <input type="text" name="subject" class="contact_input" placeholder="Subject"> -->
-							<textarea name= "message" class="contact_input contact_textarea" placeholder="Your Message" required="required"></textarea>
+							<input type="text" id="name" name="name" class="contact_input" placeholder="Your Name" required="required">
+							<input type="email" id="email" name="email" class="contact_input" placeholder="Your Email Address" required="required">
+							<textarea id="message" name="message" class="contact_input contact_textarea" placeholder="Your Message" required="required"></textarea>
 							<button class="contact_button" type="submit">Send</button>
 						</form>
 					</div>
@@ -235,6 +238,7 @@
 <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/send_email.js"></script>
 
 
 
