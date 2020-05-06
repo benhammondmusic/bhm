@@ -9,8 +9,6 @@ $(function() {
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
 		// Stop the browser from submitting the form.
-        console.log(e);
-        
         e.preventDefault();
 
 		// Serialize the form data.
