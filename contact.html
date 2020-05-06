@@ -1,273 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<head>
-	<title>Ben Hammond - Song Builder</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Ben Hammond Song Builder">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
-</head>
-<body>
 
-<div class="super_container">
-	
-	<!-- Header -->
-	<header class="header">
-		<div class="header_content d-flex flex-row align-items-center justify-content-center">
-			<div class="logo"><a href="index.html"><img src="images/logo.svg" alt="Ben Hammond Logo" height="70px"></a></div>
-			<nav class="main_nav">
-				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="shows.html">Shows</a></li>
-					<li><a href="music.html">Music</a></li>
-					<li><a href="booking.html">Booking</a></li>
-					<li class="active"><a href="contact.html">Contact</a></li>
-				</ul>
-			</nav>
-			<div class="hamburger ml-auto">
-				<div class="d-flex flex-column align-items-end justify-content-between">
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
-			</div>
-		</div>
-	</header>
+    <head>
 
-	<!-- Menu -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Ben Hammond Song Builder">
 
-	<div class="menu">
-		<div>
-			<div class="menu_overlay"></div>
-			<div class="menu_container d-flex flex-column align-items-start justify-content-center">
-				<nav class="menu_nav">
-					<ul class="d-flex flex-column align-items-start justify-content-start">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="shows.html">Shows</a></li>
-						<li><a href="music.html">Music</a></li>
-						<li><a href="booking.html">Booking</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</div>
+        <title>Ben Hammond - Song Builder</title>
 
-	<!-- Home -->
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600">
 
-	<div class="home cont">
-		<div class="home_inner">
-			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/ben-t5-skyline.jpg" data-speed="0.8"></div>
-			<div class="home_container">
-				<div class="home_content">
-					<div class="home_subtitle">Ben Hammond</div>
-					<div class="home_title"><h1>Contact</h1></div>
-				</div>
-			</div>
-		</div>
-	</div>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-	<!-- Contact -->
+        <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 
-	<div class="contact">
-		<div class="container">
-			<div class="row">
-				
-				<!-- Contact Form -->
-				<!-- <div class="col-lg-6">
-					<div class="contact_form_container">
-						<div class="contact_title">Send us a message</div>
-						
-						<form method="post" action="contact.php" class="contact_form" id="contact_form">
-							<input type="text" id="name" name="name" class="contact_input" placeholder="Your Name" required="required">
-							<input type="email" id="email" name="email" class="contact_input" placeholder="Your Email Address" required="required">
-							<textarea id="message" name="message" class="contact_input contact_textarea" placeholder="Your Message" required="required"></textarea>
-							
-							<button class="contact_button" type="submit">Send</button>
-						</form>
+        <link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
 
-						<div id="form-messages"></div>
-					</div>
-				</div> -->
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-				<div class="form-bottom contact-form">
-					<form role="form" action="assets/contact.php" method="post">
-						<div class="form-group">
-							<label class="sr-only" for="contact-email">Email</label>
-							<input type="text" name="email" placeholder="Email..." class="contact-email form-control" id="contact-email">
-						</div>
-						<div class="form-group">
-							<label class="sr-only" for="contact-subject">Subject</label>
-							<input type="text" name="subject" placeholder="Subject..." class="contact-subject form-control" id="contact-subject">
-						</div>
-						<div class="form-group">
-							<label class="sr-only" for="contact-message">Message</label>
-							<textarea name="message" placeholder="Message..." class="contact-message form-control" id="contact-message"></textarea>
-						</div>
-						<div class="form-group">
-							<label for="contact-antispam">Antispam question: 7 + 5 = ?</label>
-							<input type="text" name="antispam" placeholder="Your answer..." class="contact-antispam form-control" id="contact-antispam">
-						</div>
-						<button type="submit" class="btn">Send message</button>
-					</form>
-				</div>
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
+    </head>
 
+    <body>
 
+		<!-- Top content -->
+    <div class="super_container">
 
+      <!-- Header -->
+      <header class="header">
+      <div class="header_content d-flex flex-row align-items-center justify-content-center">
+        <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="Ben Hammond Logo" height="70px"></a></div>
+        <nav class="main_nav">
+          <ul class="d-flex flex-row align-items-start justify-content-start">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shows.html">Shows</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li class="active"><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="hamburger ml-auto">
+          <div class="d-flex flex-column align-items-end justify-content-between">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      </header>
+
+      <!-- Menu -->
+
+      <div class="menu">
+        <div>
+          <div class="menu_overlay"></div>
+          <div class="menu_container d-flex flex-column align-items-start justify-content-center">
+            <nav class="menu_nav">
+              <ul class="d-flex flex-column align-items-start justify-content-start">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shows.html">Shows</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Home -->
+
+      <div class="home cont">
+        <div class="home_inner">
+          <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/ben-t5-skyline.jpg" data-speed="0.8"></div>
+          <div class="home_container">
+            <div class="home_content">
+              <div class="home_subtitle">Ben Hammond</div>
+              <div class="home_title"><h1>Contact</h1></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact -->
+
+      <div class="contact">
+        <div class="container">
+          <div class="row">
+
+            <!-- Contact Form -->
+            <div class="col-lg-6">
+              <div class="contact_form_container">
+                <div class="contact_title">Send us aa message</div>
+
+                <form method="post" action="" class="contact_form" id="contact_form">
+                  <input type="text" id="name" name="name" class="contact_input" placeholder="Your Name" required="required">
+                  <input type="email" id="email" name="email" class="contact_input" placeholder="Your Email Address" required="required">
+                  <textarea id="message" name="message" class="contact_input contact_textarea" placeholder="Your Message" required="required"></textarea>
+
+                  <button class="contact_button" type="submit">Send</button>
+                </form>
+
+                <div id="form-messages"></div>
+              </div>
+            </div>
 
 
-				<!-- Contact Info -->
-				<div class="col-lg-6 contact_col">
-					<div class="contact_info">
-						<div class="contact_title">Where to find us</div>
-						<div class="contact_text">
-							<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus luctus nec. Curabitur luctus luctus erat, sit amet facilisis quam congue quis. Quisque ornare luctus erat id dignissim. Nullam ac nunc quis ex porttitor luctus.</p>
-						</div>
-						<div class="contact_info_list">
-							<ul>
-								<li class="d-flex flex-row align-items-start justify-content-start">
-									<div><div>Address</div></div>
-									<div>1481 Creekside Lane Avila Beach, CA 931</div>
-								</li>
-								<li class="d-flex flex-row align-items-start justify-content-start">
-									<div><div>Phone</div></div>
-									<div>+53 345 7953 32453</div>
-								</li>
-								<li class="d-flex flex-row align-items-start justify-content-start">
-									<div><div>E-mail</div></div>
-									<div>yourmail@gmail.com</div>
-								</li>
-							</ul>
-						</div>
-					
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+            <!-- Contact Info -->
+            <div class="col-lg-6 contact_col">
+              <div class="contact_info">
+                <div class="contact_title">Where to find us</div>
+                <div class="contact_text">
+                  <p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus luctus nec. Curabitur luctus luctus erat, sit amet facilisis quam congue quis. Quisque ornare luctus erat id dignissim. Nullam ac nunc quis ex porttitor luctus.</p>
+                </div>
+                <div class="contact_info_list">
+                  <ul>
+                    <li class="d-flex flex-row align-items-start justify-content-start">
+                      <div><div>Address</div></div>
+                      <div>1481 Creekside Lane Avila Beach, CA 931</div>
+                    </li>
+                    <li class="d-flex flex-row align-items-start justify-content-start">
+                      <div><div>Phone</div></div>
+                      <div>+53 345 7953 32453</div>
+                    </li>
+                    <li class="d-flex flex-row align-items-start justify-content-start">
+                      <div><div>E-mail</div></div>
+                      <div>yourmail@gmail.com</div>
+                    </li>
+                  </ul>
+                </div>
 
-	<!-- Footer -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-	<footer class="footer">
-		<a name="contact_section"></a>
-		<div class="footer_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-			<div class="newsletter_container">
-				<div class="newsletter_title">
-					Join the Mailing List
-				</div>
-				<!-- Begin Mailchimp Signup Form -->
-				<div id="mc_embed_signup">
-					<form action="https://benhammondmusic.us6.list-manage.com/subscribe/post?u=24021f91024f3c0e90c50eaf3&amp;id=dc677a6554" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter_form" target="_blank" novalidate>
-						<!-- above form need id="newsletter_form" ?? -->
-						<div id="mc_embed_signup_scroll">
-						<!-- <label for="mce-EMAIL">Subscribe</label> -->
-							<input type="email" value="" name="EMAIL" class="email newsletter_input" id="mce-EMAIL" placeholder="email address" required="required">
-							<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-							<div style="position: absolute; left: -5000px;" aria-hidden="true">
-								<input type="text" name="b_24021f91024f3c0e90c50eaf3_dc677a6554" tabindex="-1" value="">
-							</div>
+      <!-- Footer -->
 
-							<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter_button">
-						</div>
-					</form>
-				</div>
-				<!--End mc_embed_signup-->
+    	<footer class="footer">
+    		<a name="contact_section"></a>
+    		<div class="footer_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
+    			<div class="newsletter_container">
+    				<div class="newsletter_title">
+    					Join the Mailing List
+    				</div>
 
-			</div>
-			<!-- Connect -->
-			<div class="align-items-center d-flex flex-sm-row flex-column ml-xl-auto">
-				<div class="social_container">
-					<div class="social_title">
-						Connect
-					</div>
-							
-					<div class="social">
-						<ul class="d-flex flex-row align-items-center justify-content-start">
-							<li><a target="_blank" href="http://www.facebook.com/benhammondmusicpage" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a target="_blank" href="https://www.instagram.com/benhammondmusic" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li><a target="_blank" href="https://twitter.com/benhammondmusic" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
+    				<!-- Begin Mailchimp Signup Form -->
+    				<div id="mc_embed_signup">
+    					<form action="https://benhammondmusic.us6.list-manage.com/subscribe/post?u=24021f91024f3c0e90c50eaf3&amp;id=dc677a6554" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter_form" target="_blank" novalidate>
+    						<!-- above form need id="newsletter_form" ?? -->
+    						<div id="mc_embed_signup_scroll">
+    						<!-- <label for="mce-EMAIL">Subscribe</label> -->
+    							<input type="email" value="" name="EMAIL" class="email newsletter_input" id="mce-EMAIL" placeholder="email address" required="required">
+    							<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    							<div style="position: absolute; left: -5000px;" aria-hidden="true">
+    								<input type="text" name="b_24021f91024f3c0e90c50eaf3_dc677a6554" tabindex="-1" value="">
+    							</div>
 
-				<div class="social_container">
-					<div class="social_title">
-						Listen
-					</div>
-							
-					<div class="social">
-						<ul class="d-flex flex-row align-items-center justify-content-start">
-							<li><a target="_blank" href="https://open.spotify.com/artist/1q9zbsAcxs9fP7b9G8Y4Qk?si=GZE5O5EoSaCKM99kfeN79w" title="Spotify"><i class="fa fa-spotify" aria-hidden="true"></i></a></li>
-							<li><a target="_blank" href="https://music.apple.com/us/artist/ben-hammond/164875823" title="Apple Music"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
-							<li><a target="_blank" href="http://www.youtube.com/benhammondmusicpage" title="Youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
+    							<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter_button">
+    						</div>
+    					</form>
+    				</div>
+    				<!--End mc_embed_signup-->
 
+    			</div>
+    			<!-- Connect -->
+    			<div class="align-items-center d-flex flex-sm-row flex-column ml-xl-auto">
+    				<div class="social_container">
+    					<div class="social_title">
+    						Connect
+    					</div>
 
+    					<div class="social">
+    						<ul class="d-flex flex-row align-items-center justify-content-start">
+    							<li><a target="_blank" href="http://www.facebook.com/benhammondmusicpage" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+    							<li><a target="_blank" href="https://www.instagram.com/benhammondmusic" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+    							<li><a target="_blank" href="https://twitter.com/benhammondmusic" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+    						</ul>
+    					</div>
+    				</div>
 
-			<div class="footer_lists d-flex flex-sm-row flex-column align-items-center justify-content-start ml-xl-auto">
+    				<div class="social_container">
+    					<div class="social_title">
+    						Listen
+    					</div>
 
-				<div class="footer_list">
-					<div class="footer_list_title">Menu</div>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="shows.html">Shows</a></li>
-						<li><a href="music.html">Music</a></li>
-						<li><a href="booking.html">Booking</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</div>
-
-				<div class="footer_list">
-					<div class="footer_list_title">More Info</div>
-					<ul>
-						<li><a href="#">Important</a></li>
-						<li><a href="live.html">Live-Streaming</a></li>
-						<li><a href="songlist.html">Song List</a></li>
-						<li><a href="faq.html">FAQ</a></li>
-						<li><a href="#">Email</a></li>
-					</ul>
-				</div>
-
-			</div>
-		</div>
-		<div class="copyright_bar">
-			<span>
-				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				Copyright &copy;
-				<script>document.write(new Date().getFullYear());</script> All rights reserved | Template: <a
-					href="https://colorlib.com" target="_blank">Colorlib</a> | Further Design and Development: Ben
-				Hammond
-				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-			</span>
-		</div>
-	</footer>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="plugins/greensock/TweenMax.min.js"></script>
-<script src="plugins/greensock/TimelineMax.min.js"></script>
-<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="plugins/greensock/animation.gsap.min.js"></script>
-<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/send_email.js"></script>
+    					<div class="social">
+    						<ul class="d-flex flex-row align-items-center justify-content-start">
+    							<li><a target="_blank" href="https://open.spotify.com/artist/1q9zbsAcxs9fP7b9G8Y4Qk?si=GZE5O5EoSaCKM99kfeN79w" title="Spotify"><i class="fa fa-spotify" aria-hidden="true"></i></a></li>
+    							<li><a target="_blank" href="https://music.apple.com/us/artist/ben-hammond/164875823" title="Apple Music"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
+    							<li><a target="_blank" href="http://www.youtube.com/benhammondmusicpage" title="Youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+    						</ul>
+    					</div>
+    				</div>
+    			</div>
 
 
 
-</body>
+    			<div class="footer_lists d-flex flex-sm-row flex-column align-items-center justify-content-start ml-xl-auto">
+
+    				<div class="footer_list">
+    					<div class="footer_list_title">Menu</div>
+    					<ul>
+    						<li><a href="index.html">Home</a></li>
+    						<li><a href="shows.html">Shows</a></li>
+    						<li><a href="music.html">Music</a></li>
+    						<li><a href="booking.html">Booking</a></li>
+    						<li><a href="contact.html">Contact</a></li>
+    					</ul>
+    				</div>
+
+    				<div class="footer_list">
+    					<div class="footer_list_title">More Info</div>
+    					<ul>
+    						<li><a href="#">Important</a></li>
+    						<li><a href="live.html">Live-Streaming</a></li>
+    						<li><a href="songlist.html">Song List</a></li>
+    						<li><a href="faq.html">FAQ</a></li>
+    						<li><a href="#">Email</a></li>
+    					</ul>
+    				</div>
+
+    			</div>
+    		</div>
+    		<div class="copyright_bar">
+    			<span>
+    				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    				Copyright &copy;
+    				<script>document.write(new Date().getFullYear());</script> All rights reserved | Template: <a
+    					href="https://colorlib.com" target="_blank">Colorlib</a> | Further Design and Development: Ben
+    				Hammond
+    				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    			</span>
+    		</div>
+    	</footer>
+    </div> <!-- end super_container -->
+
+
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1>Bootstrap Contact Form Tutorial</h1>
+                            <div class="description">
+                            	<p>
+	                            	Learn how to create a working Bootstrap contact form using PHP, jQuery, AJAX, HTML5 and CSS3.
+	                            	Check it out on <a href="http://azmind.com">AZMIND</a>!
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                    			<h3>Contact us</h3>
+                        		<p>Fill in the form below to send us a message:</p>
+                            </div>
+                            <div class="form-bottom contact-form">
+			                    <form role="form" action="assets/contact.php" method="post">
+			                    	<div class="form-group">
+			                    		<label class="sr-only" for="contact-email">Email</label>
+			                        	<input type="text" name="email" placeholder="Email..." class="contact-email form-control" id="contact-email">
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="contact-name">Name</label>
+			                        	<input type="text" name="name" placeholder="Name..." class="contact-name form-control" id="contact-name">
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="contact-message">Message</label>
+			                        	<textarea name="message" placeholder="Message..." class="contact-message form-control" id="contact-message"></textarea>
+			                        </div>
+			                        <div class="form-group">
+			                        	<label for="contact-antispam">Antispam question: 7 + 5 = ?</label>
+			                        	<input type="text" name="antispam" placeholder="Your answer..." class="contact-antispam form-control" id="contact-antispam">
+			                        </div>
+			                        <button type="submit" class="btn">Send message</button>
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <!-- Javascript from webite template -->
+
+
+        <!-- USE THIS INSTEAD OR OTHER ONE THAT WASNT WORKING -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="plugins/greensock/TweenMax.min.js"></script>
+        <script src="plugins/greensock/TimelineMax.min.js"></script>
+        <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+        <script src="plugins/greensock/animation.gsap.min.js"></script>
+        <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+        <script src="plugins/parallax-js-master/parallax.min.js"></script>
+
+
+        <!-- Javascript from Contact Form Demo-->
+          <script src="assets/js/scripts.js"></script>
+
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
 </html>

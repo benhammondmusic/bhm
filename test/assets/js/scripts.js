@@ -1,7 +1,11 @@
 
 jQuery(document).ready(function() {
-
-
+	
+    /*
+        Fullscreen background
+    */
+    $.backstretch("assets/img/backgrounds/1.jpg");
+    
     /*
 	    Contact form
 	*/
@@ -33,11 +37,13 @@ jQuery(document).ready(function() {
 	            if(json.emailMessage == '' && json.subjectMessage == '' && json.messageMessage == '' && json.antispamMessage == '') {
 	                $('.contact-form form').fadeOut('fast', function() {
 	                    $('.contact-form').append('<p>Thanks for contacting us! We will get back to you very soon.</p>');
+	                    // reload background
+	    				$.backstretch("resize");
 	                });
 	            }
 	        }
 	    });
 	});
-
-
+    
+    
 });
