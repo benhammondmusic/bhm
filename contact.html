@@ -18,6 +18,20 @@
 
         <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
         <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://www.benhammondmusic.com/icons/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.benhammondmusic.com/icons/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.benhammondmusic.com/icons/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.benhammondmusic.com/icons/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://www.benhammondmusic.com/icons/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://www.benhammondmusic.com/icons/apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="http://www.benhammondmusic.com/icons/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="http://www.benhammondmusic.com/icons/favicon-16x16.png" sizes="16x16" />
+        <meta name="application-name" content="Ben Hammond - Song Builder"/>
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="msapplication-TileImage" content="http://www.benhammondmusic.com/icons/mstile-144x144.png" />
+        
     </head>
 
     <body>
@@ -27,7 +41,7 @@
 
       <!-- Header -->
       <header class="header">
-      <div class="header_content d-flex flex-row align-items-center justify-content-center">
+      <div class="header_content d-flex flex-row align-items-center justify-content-end">
         <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="Ben Hammond Logo" height="70px"></a></div>
         <nav class="main_nav">
           <ul class="d-flex flex-row align-items-start justify-content-start">
@@ -82,15 +96,17 @@
       </div>
 
       <!-- Contact -->
-
+      <a name="contact_form_section"></a>
+            
       <div class="contact">
         <div class="container">
           <div class="row">
+              
             
             <!-- Contact Form NEED ADD SCREEN READER LABELS? -->
             <div class="col-lg-6">
-              <div class="contact_form_container contact-form">
-                <div class="contact_title">Send us a message</div>
+              <div class="contact_form_cont">
+                <div class="contact_title">Send An Email</div>
 
                 <form role="form" action="assets/contact.php" method="post" class="contact_form" id="contact_form">
                   <input type="text" id="name" name="name" class="contact_input contact-name form-control" placeholder="Your Name" required="required">
@@ -110,23 +126,26 @@
             <!-- Contact Info -->
             <div class="col-lg-6 contact_col">
               <div class="contact_info">
-                <div class="contact_title">Where to find us</div>
+                <div class="contact_title">Let's Make Some Music!</div>
                 <div class="contact_text">
-                  <p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus luctus nec. Curabitur luctus luctus erat, sit amet facilisis quam congue quis. Quisque ornare luctus erat id dignissim. Nullam ac nunc quis ex porttitor luctus.</p>
+                  <p>Thank you so much for visiting! If you'd like to stay in touch, a great place to start is to <a href="#contact_section">sign up for my mailing list</a>; infrequent and important info and music periodically sent to your email inbox. </p>
+                  <p>Otherwise, I'm generally quite active on social media and would love to connect with you on <a target="_blank" href="https://www.facebook.com/benhammondmusicpage">Facebook</a>, <a target="_blank" href="https://www.instagram.com/benhammondmusic">Instagram</a> and <a target="_blank" href="https://twitter.com/benhammondmusic">Twitter</a>.</p>
+                  <p>If you're interested in hiring me (with or without a band) to play at your wedding, private event or concert series, or if you have any other questions, <a href="#contact_form_section">please send an email</a> using the contact form found on this page. I'll get back to you ASAP with more information specific to your proposed event. I look forward to hearing from you!</p>
+                  <p>-Ben</p>
                 </div>
                 <div class="contact_info_list">
                   <ul>
-                    <li class="d-flex flex-row align-items-start justify-content-start">
-                      <div><div>Address</div></div>
-                      <div>1481 Creekside Lane Avila Beach, CA 931</div>
+                    <li class="d-flex flex-row align-items-center justify-content-start">
+                      <div><div>Location</div></div>
+                      <div>Denver, Colorado</div>
                     </li>
-                    <li class="d-flex flex-row align-items-start justify-content-start">
-                      <div><div>Phone</div></div>
-                      <div>+53 345 7953 32453</div>
+                    <li class="d-flex flex-row align-items-center justify-content-start">
+                      <div><div>Voicemail / SMS</div></div>
+                      <div>+1 (941) 323-1912</div>
                     </li>
-                    <li class="d-flex flex-row align-items-start justify-content-start">
-                      <div><div>E-mail</div></div>
-                      <div>yourmail@gmail.com</div>
+                    <li class="d-flex flex-row align-items-center justify-content-start">
+                      <div><div>Email (preferred)</div></div>
+                      <div><p>Please use the <a href="#contact_form_section">contact form</a>.</p></div>
                     </li>
                   </ul>
                 </div>

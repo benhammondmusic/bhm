@@ -5,13 +5,13 @@ jQuery(document).ready(function() {
     /*
 	    Contact form
 	*/
-	$('.contact-form form input[type="text"], .contact-form form textarea').on('focus', function() {
-		$('.contact-form form input[type="text"], .contact-form form textarea').removeClass('input-error');
+	$('.contact_form_cont form input[type="text"], .contact_form_cont form textarea').on('focus', function() {
+		$('.contact_form_cont form input[type="text"], .contact_form_cont form textarea').removeClass('input-error');
 	});
-	$('.contact-form form').submit(function(e) {
+	$('.contact_form_cont form').submit(function(e) {
 		e.preventDefault();
-	    $('.contact-form form input[type="text"], .contact-form form textarea').removeClass('input-error');
-	    var postdata = $('.contact-form form').serialize();
+	    $('.contact_form_cont form input[type="text"], .contact_form_cont form textarea').removeClass('input-error');
+	    var postdata = $('.contact_form_cont form').serialize();
 	    $.ajax({
 	        type: 'POST',
 	        url: 'assets/contact.php',
@@ -19,22 +19,22 @@ jQuery(document).ready(function() {
 	        dataType: 'json',
 	        success: function(json) {
 	            if(json.emailMessage != '') {
-	                $('.contact-form form .contact-email').addClass('input-error');
+	                $('.contact_form_cont form .contact-email').addClass('input-error');
 	            }
 	            if(json.subjectMessage != '') {
-	                $('.contact-form form .contact-subject').addClass('input-error');
+	                $('.contact_form_cont form .contact-subject').addClass('input-error');
 	            }
 	            if(json.messageMessage != '') {
-	                $('.contact-form form textarea').addClass('input-error');
+	                $('.contact_form_cont form textarea').addClass('input-error');
 	            }
 	            // if(json.antispamMessage != '') {
-	            //     $('.contact-form form .contact-antispam').addClass('input-error');
+	            //     $('.contact_form_cont form .contact-antispam').addClass('input-error');
 				// }
 				
 				// && json.antispamMessage == ''
 	            if(json.emailMessage == '' && json.subjectMessage == '' && json.messageMessage == '') {
-	                $('.contact-form form').fadeOut('fast', function() {
-	                    $('.contact-form').append('<p>Thanks for contacting us! We will get back to you very soon.</p>');
+					$('.contact_form_cont form').fadeOut('fast', function() {
+						$('.contact_form_cont').append('<p>Thank you for your email! A reply will be sent as soon as possible.</p>');
 	                });
 	            }
 	        }

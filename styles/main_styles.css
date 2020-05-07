@@ -553,6 +553,7 @@ section {
 5. Home
 *********************************/
 
+
 .home {
   width: 100%;
   padding-left: 51px;
@@ -672,7 +673,7 @@ section {
 *********************************/
 
 .shows {
-  padding-top: 175px;
+  /* padding-top: 175px; */
   padding-bottom: 100px;
 }
 .shows_row {
@@ -937,7 +938,8 @@ section {
   background: #545454;
   border: none;
   outline: none;
-  padding-left: 23px;
+  /* padding-left: 23px; */
+  text-align: center;
   display: inline-block;
 }
 .newsletter_input::-webkit-input-placeholder {
@@ -1118,7 +1120,7 @@ Contact
 	color: #FFFFFF;
 	line-height: 1.2;
 }
-.contact_form_container
+.contact_form_cont
 {
 	display: block;
 	width: 100%;
@@ -1217,7 +1219,29 @@ Contact
 {
 	margin-top: 30px;
 }
+.contact_info_list
+{
+	margin-top: 84px;
+	padding-left: 13px;
+}
+.contact_info_list ul li
+{
+	font-size: 16px;
+	color: #ffffff;
+}
+.contact_info_list ul li:not(:last-of-type)
+{
+	margin-bottom: 24px;
+}
+.contact_info_list ul li > div:first-child > div
+{
+	width: 96px;
+	color: #c87137;
+}
 
+
+
+/* FOR CONTACT FORM RESPONSE */
 .success {
   padding: 1em;
   margin-bottom: 0.75rem;
