@@ -12,9 +12,10 @@ if($_POST) {
     $clientEmail = addslashes(trim($_POST['email']));
     $name = addslashes(trim($_POST['name']));
     $message = addslashes(trim($_POST['message']));
-    $antispam = addslashes(trim($_POST['antispam']));
+    // $antispam = addslashes(trim($_POST['antispam']));
 
-    $array = array('emailMessage' => '', 'subjectMessage' => '', 'messageMessage' => '', 'antispamMessage' => '');
+    // , 'antispamMessage' => ''
+    $array = array('emailMessage' => '', 'subjectMessage' => '', 'messageMessage' => '');
 
     if(!isEmail($clientEmail)) {
         $array['emailMessage'] = 'Invalid email!';
@@ -25,10 +26,12 @@ if($_POST) {
     if($message == '') {
         $array['messageMessage'] = 'Empty message!';
     }
-    if($antispam != '12') {
-    	$array['antispamMessage'] = 'Wrong antispam answer!';
-    }
-    if(isEmail($clientEmail) && $name != '' && $message != '' && $antispam == '12') {
+    // if($antispam != '12') {
+    // 	$array['antispamMessage'] = 'Wrong antispam answer!';
+    // }
+
+    // && $antispam == '12'
+    if(isEmail($clientEmail) && $name != '' && $message != '') {
         // Send email
 		mail($emailTo, "WEB: " . $name, $message);
     }

@@ -27,10 +27,12 @@ jQuery(document).ready(function() {
 	            if(json.messageMessage != '') {
 	                $('.contact-form form textarea').addClass('input-error');
 	            }
-	            if(json.antispamMessage != '') {
-	                $('.contact-form form .contact-antispam').addClass('input-error');
-	            }
-	            if(json.emailMessage == '' && json.subjectMessage == '' && json.messageMessage == '' && json.antispamMessage == '') {
+	            // if(json.antispamMessage != '') {
+	            //     $('.contact-form form .contact-antispam').addClass('input-error');
+				// }
+				
+				// && json.antispamMessage == ''
+	            if(json.emailMessage == '' && json.subjectMessage == '' && json.messageMessage == '') {
 	                $('.contact-form form').fadeOut('fast', function() {
 	                    $('.contact-form').append('<p>Thanks for contacting us! We will get back to you very soon.</p>');
 	                });
