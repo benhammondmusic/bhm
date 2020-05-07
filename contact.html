@@ -104,21 +104,23 @@
       <div class="contact">
         <div class="container">
           <div class="row">
-
-            <!-- Contact Form -->
+            
+            <!-- Contact Form NEED ADD SCREEN READER LABELS? -->
             <div class="col-lg-6">
-              <div class="contact_form_container">
+              <div class="contact_form_container contact-form">
                 <div class="contact_title">Send us aa message</div>
 
-                <form method="post" action="" class="contact_form" id="contact_form">
-                  <input type="text" id="name" name="name" class="contact_input" placeholder="Your Name" required="required">
-                  <input type="email" id="email" name="email" class="contact_input" placeholder="Your Email Address" required="required">
-                  <textarea id="message" name="message" class="contact_input contact_textarea" placeholder="Your Message" required="required"></textarea>
+                <form role="form" action="assets/contact.php" method="post" class="contact_form" id="contact_form">
+                  <input type="text" id="name" name="name" class="contact_input contact-name form-control" placeholder="Your Name" required="required">
+                  <input type="email" id="email" name="email" class="contact_input contact-email form-control" placeholder="Your Email Address" required="required">
+                  <textarea id="message" name="message" class="contact_input contact-message form-control contact_textarea" placeholder="Your Message" required="required"></textarea>
+                  
+                  
+                  <label for="contact-antispam">Antispam question: 7 + 5 = ?</label>
+                  <input type="text" name="antispam" placeholder="Your answer..." class="contact_input contact-antispam form-control" id="contact-antispam">
 
                   <button class="contact_button" type="submit">Send</button>
                 </form>
-
-                <div id="form-messages"></div>
               </div>
             </div>
 
@@ -251,63 +253,13 @@
     				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
     			</span>
     		</div>
-    	</footer>
+      </footer>
     </div> <!-- end super_container -->
-
-
-            <div class="inner-bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1>Bootstrap Contact Form Tutorial</h1>
-                            <div class="description">
-                            	<p>
-	                            	Learn how to create a working Bootstrap contact form using PHP, jQuery, AJAX, HTML5 and CSS3.
-	                            	Check it out on <a href="http://azmind.com">AZMIND</a>!
-                            	</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-offset-3 form-box">
-                        	<div class="form-top">
-                    			<h3>Contact us</h3>
-                        		<p>Fill in the form below to send us a message:</p>
-                            </div>
-                            <div class="form-bottom contact-form">
-			                    <form role="form" action="assets/contact.php" method="post">
-			                    	<div class="form-group">
-			                    		<label class="sr-only" for="contact-email">Email</label>
-			                        	<input type="text" name="email" placeholder="Email..." class="contact-email form-control" id="contact-email">
-			                        </div>
-			                        <div class="form-group">
-			                        	<label class="sr-only" for="contact-name">Name</label>
-			                        	<input type="text" name="name" placeholder="Name..." class="contact-name form-control" id="contact-name">
-			                        </div>
-			                        <div class="form-group">
-			                        	<label class="sr-only" for="contact-message">Message</label>
-			                        	<textarea name="message" placeholder="Message..." class="contact-message form-control" id="contact-message"></textarea>
-			                        </div>
-			                        <div class="form-group">
-			                        	<label for="contact-antispam">Antispam question: 7 + 5 = ?</label>
-			                        	<input type="text" name="antispam" placeholder="Your answer..." class="contact-antispam form-control" id="contact-antispam">
-			                        </div>
-			                        <button type="submit" class="btn">Send message</button>
-			                    </form>
-		                    </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
 
 
 
 
         <!-- Javascript from webite template -->
-
-
         <!-- USE THIS INSTEAD OR OTHER ONE THAT WASNT WORKING -->
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
