@@ -1111,7 +1111,7 @@ Contact
 
 .contact
 {
-	padding-top: 101px;
+	padding-top: 71px;
 	padding-bottom: 105px;
 }
 .contact_title
@@ -1124,7 +1124,7 @@ Contact
 {
 	display: block;
 	width: 100%;
-	margin-top: 59px;
+	/* margin-top: 59px; */
 }
 .contact_input
 {
@@ -1235,13 +1235,16 @@ Contact
 }
 .contact_info_list ul li > div:first-child > div
 {
-	width: 96px;
+  width: 96px;
+  padding-right: 20px;
 	color: #c87137;
 }
 
 
+/*********************************
+CONTACT FORM RESPONSES
+*********************************/
 
-/* FOR CONTACT FORM RESPONSE */
 .success {
   padding: 1em;
   margin-bottom: 0.75rem;
@@ -1264,4 +1267,46 @@ Contact
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
+}
+
+
+/*********************************
+SWIPER FOR ALBUM RELEASES
+*********************************/
+
+.swiper-container {
+  width: 60%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+
+}
+
+.swiper-details .slide-album
+{
+  box-sizing: border-box;
+  padding: 20px;
+}
+.swiper-details .slide-album
+{
+   margin: 0;
+   padding: 0;
+   font-size: 20px;
+   text-align: center;
+   line-height: 20px;
+}
+.swiper-button-next, .swiper-button-prev {
+  color: #8899bb;
+}
+.swiper-pagination-bullet {
+  background-color: #c87137;
+}
+.swiper-pagination-bullet-active {
+  background-color: #c87137;
 }
