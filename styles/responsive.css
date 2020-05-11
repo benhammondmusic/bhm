@@ -113,7 +113,9 @@
 
 @media only screen and (max-width: 1024px)
 {
-	
+	.swiper-container {
+		width: 80%;
+	}
 }
 
 /************
@@ -474,6 +476,9 @@
 {
 	.show_location {
 		font-size: .8em;
+	}
+	.swiper-container {
+		width: 100%;
 	}
 }
 

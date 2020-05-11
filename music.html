@@ -89,25 +89,70 @@
 
 		<!-- Swiper -->
 		<div class="swiper-container">
-			<h1>Albums, EPs and Singles</h1>
+			<h1>Releases</h1>
 			<div class="swiper-wrapper">
+				<div class="swiper-slide" style="background-image:url(images/albumcovers/gone.jpg)">
+					<div class="title">
+						Gone (2017)<br>
+						<a target="_blank" href="https://open.spotify.com/album/0wO71kn47uK9AA5J4NqbN9" title="Spotify"><i class="fa fa-spotify" aria-hidden="true"></i></a>
+						<a target="_blank" href="https://music.apple.com/us/album/gone-to-california-single/1231607849" title="Apple Music"><i class="fa fa-apple" aria-hidden="true"></i></a>
+					</div>
+				</div>
 				<div class="swiper-slide" style="background-image:url(images/albumcovers/friction.jpg)">
-					<span class="slide-album"></span>
+					<div class="title">
+						Friction (2014)<br>
+						<a target="_blank" href="https://open.spotify.com/album/36tOKgpZuT9jiVnCBHxhWO" title="Listen on Spotify"><i class="fa fa-spotify" aria-hidden="true"></i></a>
+						<a target="_blank" href="https://music.apple.com/us/album/friction/920576506" title="Listen on Apple Music"><i class="fa fa-apple" aria-hidden="true"></i></a>
+					</div>
 				</div>
 				<div class="swiper-slide" style="background-image:url(images/albumcovers/solo.jpg)">
-					<span class="slide-album"></span>
+					<div class="title">
+						Solo at Stone Mt Arts Center (2011)<br>
+						<a target="_blank" href="https://open.spotify.com/album/3DTF0fum9uhqGxOS2czdaf" title="Spotify"><i class="fa fa-spotify" aria-hidden="true"></i></a>
+						<a target="_blank" href="https://music.apple.com/us/album/solo-at-stone-mt-arts-center/417555127" title="Apple Music"><i class="fa fa-apple" aria-hidden="true"></i></a>
+					</div>
 				</div>
 				<div class="swiper-slide" style="background-image:url(images/albumcovers/reasonablyhonest.jpg)">
-					<span class="slide-album"></span>
+					<div class="title">
+						[Reasonably] Honest (2008)<br>
+						<a target="_blank" href="https://open.spotify.com/album/4P8v3P5so2Re7e2JcvuluA" title="Spotify"><i class="fa fa-spotify" aria-hidden="true"></i></a>
+						<a target="_blank" href="https://music.apple.com/us/album/reasonably-honest-extended-edition/350749973" title="Apple Music"><i class="fa fa-apple" aria-hidden="true"></i></a>
+					</div>
 				</div>
 				<div class="swiper-slide" style="background-image:url(images/albumcovers/nohistory.jpg)">
-					<span class="slide-album"></span>
+					<div class="title">
+						No History Sessions (2005)<br>
+					</div>
 				</div>
-				<div class="swiper-slide" style="background-image:url(images/albumcovers/gone.jpg)">
-					<span class="slide-album"></span>
+				<div class="swiper-slide">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/vOsNcBz9ZNI?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 
-				<!-- <div class="swiper-slide" style="background-image:url(images/albumcovers/.jpg)"></div> -->
+
+
+
+
+
+				<!-- NOISE 3 -->
+				<!-- https://music.apple.com/us/album/noise-ordinance-3/575189491 -->
+				<!-- https://open.spotify.com/album/2uIZf21ppA5mmsUjoklVVT -->
+
+				<!-- CANDIE -->
+				<!-- https://open.spotify.com/album/73Ou5zGclwNjkUNxYAeBuz -->
+
+				<!-- ANDRES -->
+				<!-- https://music.apple.com/us/album/universal-universe/648130727 -->
+				<!-- https://open.spotify.com/album/5hBbalaPc0SMPG6J5dKUhL -->
+
+				<!-- PANDORA  -->
+				<!-- GONE https://pandora.app.link/FNpETqL7l6 -->
+				<!-- FRICTION https://pandora.app.link/QYIkJl16l6 -->
+				<!-- SOLO https://pandora.app.link/f2H2md06l6 -->
+				<!-- REASONABLY https://pandora.app.link/VFVxR6X6l6 -->
+
+
+
+
 			</div>
 			<!-- Add Pagination -->
 			<div class="swiper-pagination"></div>
@@ -267,16 +312,20 @@
 	<script src="js/custom.js"></script>
 	<script src="js/about.js"></script>
 	<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js" type="text/javascript" ></script>
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js" type="text/javascript" ></script>
+	<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
   
 
 	<!-- Initialize Swiper -->
 	<script>
 		var swiper = new Swiper('.swiper-container', {
+			parallex: true,
 			effect: 'coverflow',
 			slideToClickedSlide: true,
 			grabCursor: true,
 			centeredSlides: true,
+			// preventClicks: false,
+			// preventClicksPropagation: false,
 			slidesPerView: 'auto',
 			coverflowEffect: {
 				rotate: 50,
