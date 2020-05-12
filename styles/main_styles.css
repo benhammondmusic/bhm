@@ -562,10 +562,10 @@ section {
 .home.index {
   height: 892px;
 }
-.home.booking {
+ /* {
   height: 345px;
-}
-.home.cont, .home.music, .home.shows, .home.songlist {
+} */
+.home.cont, .home.music, .home.shows, .home.songlist, .home.booking {
   padding-top: 100px;
   height: 500px;
 }
@@ -610,7 +610,7 @@ section {
   z-index: 1;
   padding-top: 72px;
 }
-.cont .home_container, .music .home_container, .shows .home_container {
+.cont .home_container, .music .home_container, .shows .home_container, .booking .home_container, .songlist .home_container {
   text-align: center;
   justify-content: center;
   margin-left: 15%;
@@ -1076,17 +1076,10 @@ Song List
   margin-bottom: 30px;
 }
 
-.songlist_image {
-  width: calc(100% + 205px);
-  left: -185px;
-  padding-right: 20px;
-}
-.songlist_image img {
-  max-width: 100%;
-}
+
 .songlist_table {
   margin-top: 39px;
-  width: 70%;
+  width: 100%;
 }
 .songlist_table p:not(:last-child) {
   margin-bottom: 30px;
@@ -1104,6 +1097,11 @@ Song List
   padding: 5px;
   font-size: larger;
 }
+
+td.song-title, td.song-artist {
+
+}
+
 
 /*********************************
 Contact
@@ -1450,6 +1448,7 @@ SWIPER FOR ALBUM RELEASES
     z-index: 2;
     height: 100%;
     width: 100%;
+    margin: auto;
     opacity: 0;
     visibility: hidden;
     -webkit-transition: .3s all ease;
@@ -1493,6 +1492,11 @@ SWIPER FOR ALBUM RELEASES
   color: #FFFFFF;
   font-size: 4em;
   padding: 10px;
+}
+.buy-icons a:hover {
+  color: #FFFFFF;
+  font-size: 5em;
+  margin: 10px;
 }
 
 /*********************************
