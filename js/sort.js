@@ -8,8 +8,6 @@ function removeTags(aSongTitle) {
         text = parts[0];
         text = text.replace(/  |\r\n|\n|\r/gm, '');
     }
-    console.log(text);
-
 }
 
 

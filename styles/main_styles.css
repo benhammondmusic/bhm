@@ -562,10 +562,10 @@ section {
 .home.index {
   height: 892px;
 }
-.home.music, .home.shows, .home.booking {
+.home.booking {
   height: 345px;
 }
-.home.cont, .home.music, .home.shows {
+.home.cont, .home.music, .home.shows, .home.songlist {
   padding-top: 100px;
   height: 500px;
 }
@@ -1431,6 +1431,8 @@ SWIPER FOR ALBUM RELEASES
   width: 100%;
   overflow: hidden; }
   .team-member img {
+    display: block;
+    margin:0 auto;
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
     transition: .3s all ease;
@@ -1444,7 +1446,7 @@ SWIPER FOR ALBUM RELEASES
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(200,113,55, 0.75);
+    background: rgba(50,50,50, 0.75);
     z-index: 2;
     height: 100%;
     width: 100%;
@@ -1466,7 +1468,9 @@ SWIPER FOR ALBUM RELEASES
     transition: .5s all ease;
     opacity: 0;
     visibility: hidden;
-    color: #fff; }
+    color: #fff; 
+  }
+    
   .team-member:hover:before, .team-member:focus:before, .team-member:active:before {
     opacity: 1;
     visibility: visible; }
@@ -1483,5 +1487,107 @@ SWIPER FOR ALBUM RELEASES
     transition-delay: .2s;
     opacity: 1;
     visibility: visible;
-    z-index: 4; }
+    z-index: 4; 
+  }
+.buy-icons a {
+  color: #FFFFFF;
+  font-size: 4em;
+  padding: 10px;
+}
 
+/*********************************
+Accordions
+*********************************/
+
+/* .acc_tabs
+{
+	margin-top: 105px;
+}
+.acc_tabs_row
+{
+	margin-top: 61px;
+}
+.accordion_container:not(:last-child)
+{
+	margin-bottom: 17px;
+}
+.accordion
+{
+	height: 50px;
+	width: 100%;
+	background: #de4f32;
+	padding-left: 44px;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-size: 14px;
+	line-height: 50px;
+	border: solid 2px #de4f32;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.accordion.active
+{
+	background: transparent;
+	color: #de4f32;
+}
+.accordion div
+{
+	max-width: 90%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.accordion::after
+{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 26px;
+	height: 100%;
+	content: '+';
+	font-size: 14px;
+	color: #FFFFFF;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.accordion.active::after
+{
+	content: '-';
+	color: #de4f32;
+}
+.accordion_panel
+{
+	padding-right: 8px;
+	max-height: 0px;
+	overflow: hidden;
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+.accordion_panel > div
+{
+	padding-bottom: 20px;
+}
+.accordion_panel p
+{
+	padding-top: 28px;
+} */
