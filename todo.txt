@@ -1,0 +1,4 @@
+TODO: make live streaming page
+TODO: add FAQs inside accordions? 
+TODO: shrink index picture? 
+TODO: take index pcitures out of owl
