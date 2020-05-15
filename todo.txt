@@ -1,4 +1,4 @@
-
+TODO: makesuregithub works from both computers
 TODO: add FAQs 
 TODO: shrink index picture? 
 TODO: take index pcitures out of owl
