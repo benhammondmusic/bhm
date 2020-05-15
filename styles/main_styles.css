@@ -257,6 +257,13 @@ section {
   font-size: 18px;
   line-height: 0.75;
 }
+.section_subtitle a {
+  color: #c87137;
+}
+.section_subtitle a:hover {
+  background-color: #8899bb;
+  color: #ffffff;
+}
 .section_title {
   margin-top: 7px;
   margin-left: -2px;
@@ -1018,7 +1025,7 @@ section {
 }
 .footer_list ul li a {
   font-size: 14px;
-  color: #6d6d6d;
+  color: #8899bb;
 }
 .footer_list ul li a.fa:hover {
   color: #8899bb;
