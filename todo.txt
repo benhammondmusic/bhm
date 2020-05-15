@@ -3,3 +3,12 @@ TODO: add FAQs
 TODO: shrink index picture? 
 TODO: take index pcitures out of owl
 TODO: fix parralax in safari. maybe because of animate? 
+
+
+
+
+
+
+
+FINAL DEPLOYMENT
+TODO: change .htaccess redirect (for https)
