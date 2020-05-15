@@ -1,4 +1,5 @@
-TODO: make live streaming page
-TODO: add FAQs inside accordions? 
+
+TODO: add FAQs 
 TODO: shrink index picture? 
 TODO: take index pcitures out of owl
+TODO: fix parralax in safari. maybe because of animate? 
