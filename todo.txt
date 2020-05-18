@@ -8,9 +8,10 @@ TODO: add email to every  page? add email to contact and then make FORM client s
 TODO: add preferred vendor venues. maybe on VENUE page? 
 TODO: add "USES" page, music equipemtn, instruments, software/apps/tools/ add links for private consulation 
 TODO: add other musicians mini-bios, links etc
-
-
-
+TODO: add social media in contact section, different color etc than in footer
+TODO: add recommended vendors page?
+TODO: add small party / wedding pics to ends of FAQ sections
+TODO: add lyrics for original songs? chord charts?
 
 
 FINAL DEPLOYMENT

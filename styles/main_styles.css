@@ -1573,16 +1573,32 @@ FAQ
 dl.faq-list {
   font-size: 1.5em;
 }
+h2.list-section-heading {
+  background-color: #8899bb;
+  padding: 5px;
+  text-align: center;
+}
 .faq-list dt {
   font-weight: bold;
-  list-style-image: url("https://placehold.it/10x10");
-  display: list-item; /* to make it work */
   margin-left: 2em; /* to make it visible */
+  margin-top: 1em;
 }
 .faq-list dd {
   font-style: italic;
-  margin-left: 10em; /* to make it visible */
+  margin-left: 6em; /* to make it visible */
   margin-bottom: 3em;
-  list-style-image: url("https://placehold.it/10x10");
+  /* list-style-image: url("https://placehold.it/10x10"); */
+  list-style: square;
   display: list-item; /* to make it work */
+}
+.faq-list a {
+  color: #c87137;
+}
+.faq-list a:hover {
+  background-color: #c87137;
+  color: #ffffff;
+}
+.icon img {
+  height: 2em;
+  margin-bottom: 0.5em;
 }
