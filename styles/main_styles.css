@@ -574,7 +574,8 @@ section {
 .home.music,
 .home.shows,
 .home.songlist,
-.home.booking {
+.home.booking,
+.home.faq {
   padding-top: 100px;
   height: 500px;
 }
@@ -622,7 +623,8 @@ section {
 .music .home_container,
 .shows .home_container,
 .booking .home_container,
-.songlist .home_container {
+.songlist .home_container,
+.faq .home_container {
   text-align: center;
   justify-content: center;
   margin-left: 15%;
@@ -1563,4 +1565,24 @@ Accordions
 }
 .accordion_panel p {
   padding-top: 28px;
+}
+
+/*********************************
+FAQ
+*********************************/
+dl.faq-list {
+  font-size: 1.5em;
+}
+.faq-list dt {
+  font-weight: bold;
+  list-style-image: url("https://placehold.it/10x10");
+  display: list-item; /* to make it work */
+  margin-left: 2em; /* to make it visible */
+}
+.faq-list dd {
+  font-style: italic;
+  margin-left: 10em; /* to make it visible */
+  margin-bottom: 3em;
+  list-style-image: url("https://placehold.it/10x10");
+  display: list-item; /* to make it work */
 }

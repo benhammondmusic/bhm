@@ -4,8 +4,10 @@ TODO: add press reviews
 TODO: shrink index picture? 
 TODO: take index pcitures out of owl
 TODO: fix parralax in safari. maybe because of animate? 
-
-
+TODO: add email to every  page? add email to contact and then make FORM client specific
+TODO: add preferred vendor venues. maybe on VENUE page? 
+TODO: add "USES" page, music equipemtn, instruments, software/apps/tools/ add links for private consulation 
+TODO: add other musicians mini-bios, links etc
 
 
 
