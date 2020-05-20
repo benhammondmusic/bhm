@@ -1,4 +1,4 @@
 # Always use https for secure connections
 RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
-RewriteRule ^(.*)$ https://www.benhammondmusic.com/WEBSITE2020/$1 [R=301,L]
+RewriteRule ^(.*)$ https://www.benhammondmusic.com/w/$1 [R=301,L]
