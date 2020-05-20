@@ -272,6 +272,9 @@ section {
   margin-top: 40px;
   margin-bottom: 40px;
 }
+.offsetAnchor {
+  padding-top: 50px;
+}
 
 /*********************************
 3. Header
@@ -1353,7 +1356,12 @@ SWIPER FOR ALBUM RELEASES
   background: #c87137;
 }
 
+.site-section {
+  padding-bottom: 5em;
+}
 .site-section-heading h2 {
+  padding-top: 1em;
+  padding-bottom: 2em;
   font-size: 2rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -1372,7 +1380,7 @@ SWIPER FOR ALBUM RELEASES
   left: 0;
   bottom: 0;
   height: 2px;
-  background: #c87137;
+  background: #ffffff;
 }
 
 .site-section-heading.w-border.text-center h2:after {

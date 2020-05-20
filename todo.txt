@@ -16,7 +16,7 @@ TODO: redo all titles and meta tags. add other meta tags if needed, not spammy?
 TODO: add google tracker?
 TODO: add live-stream only to bandsintown script
 
-
+TODO: make hello@benhammondmusic.com for all website links; then can track how much spam
 
 FINAL DEPLOYMENT
 TODO: change .htaccess redirect (for https)
