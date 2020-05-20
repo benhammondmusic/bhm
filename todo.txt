@@ -12,7 +12,13 @@ TODO: add social media in contact section, different color etc than in footer
 TODO: add recommended vendors page?
 TODO: add small party / wedding pics to ends of FAQ sections
 TODO: add lyrics for original songs? chord charts?
+TODO: redo all titles and meta tags. add other meta tags if needed, not spammy?
+TODO: add google tracker?
+TODO: add live-stream only to bandsintown script
+
 
 
 FINAL DEPLOYMENT
 TODO: change .htaccess redirect (for https)
+
+

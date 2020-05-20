@@ -559,26 +559,21 @@ section {
 5. Home
 *********************************/
 
+.index {
+  height: 892px;
+}
+
+.home {
+  padding-top: 100px;
+  height: 500px;
+}
+.index,
 .home {
   width: 100%;
   padding-left: 51px;
   padding-right: 52px;
 }
-.home.index {
-  height: 892px;
-}
-/* {
-  height: 345px;
-} */
-.home.cont,
-.home.music,
-.home.shows,
-.home.songlist,
-.home.booking,
-.home.faq {
-  padding-top: 100px;
-  height: 500px;
-}
+
 /* .home.inner {
 } */
 .home_slider_container {
@@ -618,13 +613,6 @@ section {
   height: 100%;
   z-index: 1;
   padding-top: 72px;
-}
-.cont .home_container,
-.music .home_container,
-.shows .home_container,
-.booking .home_container,
-.songlist .home_container,
-.faq .home_container {
   text-align: center;
   justify-content: center;
   margin-left: 15%;
@@ -1601,4 +1589,21 @@ h2.list-section-heading {
 .icon img {
   height: 2em;
   margin-bottom: 0.5em;
+}
+
+/*********************************
+LIVE STREAM
+*********************************/
+
+.payment-options {
+  /* background-color: #cccccc; */
+}
+a.payment-service {
+  background-color: #8899bb;
+  color: #ffffff;
+  padding: 3px;
+}
+a.payment-service:hover {
+  background-color: #c87137;
+  color: #ffffff;
 }
