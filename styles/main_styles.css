@@ -43,6 +43,8 @@
   -webkit-font-smoothing: antialiased;
   -webkit-text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+
+  /* border: 1px solid purple; */
 }
 body {
   font-family: "Futura", sans-serif;
@@ -1359,21 +1361,26 @@ SWIPER FOR ALBUM RELEASES
 .site-section {
   padding-bottom: 5em;
 }
-.site-section-heading h2 {
+.site-section-heading h2, .site-section-heading h3  {
   padding-top: 1em;
   padding-bottom: 2em;
-  font-size: 2rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #8899bb;
 }
+.site-section-heading h2 {
+  font-size: 2rem;
+}
+.site-section-heading h3 {
+  font-size: 1.6em;
+}
 
-.site-section-heading.w-border h2 {
+.site-section-heading.w-border h2, .site-section-heading.w-border h3 {
   position: relative;
   padding-bottom: 20px;
   display: inline-block;
 }
-.site-section-heading.w-border h2:after {
+.site-section-heading.w-border h2:after, .site-section-heading.w-border h3:after {
   position: absolute;
   content: "";
   width: 70px;
@@ -1383,12 +1390,13 @@ SWIPER FOR ALBUM RELEASES
   background: #ffffff;
 }
 
-.site-section-heading.w-border.text-center h2:after {
+.site-section-heading.w-border.text-center h2:after, .site-section-heading.w-border.text-center h3:after {
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+
 
 .team-member {
   position: relative;
@@ -1607,11 +1615,29 @@ LIVE STREAM
   /* background-color: #cccccc; */
 }
 a.payment-service {
-  background-color: #8899bb;
+  /* border: 2px solid #8899bb; */
   color: #ffffff;
-  padding: 3px;
+  /* padding-left: 1px; */
+  padding-right, padding-top, padding-bottom: 3px;
 }
 a.payment-service:hover {
   background-color: #c87137;
   color: #ffffff;
+}
+.livestream-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
