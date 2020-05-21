@@ -1361,7 +1361,8 @@ SWIPER FOR ALBUM RELEASES
 .site-section {
   padding-bottom: 5em;
 }
-.site-section-heading h2, .site-section-heading h3  {
+.site-section-heading h2,
+.site-section-heading h3 {
   padding-top: 1em;
   padding-bottom: 2em;
   letter-spacing: 0.2em;
@@ -1375,12 +1376,14 @@ SWIPER FOR ALBUM RELEASES
   font-size: 1.6em;
 }
 
-.site-section-heading.w-border h2, .site-section-heading.w-border h3 {
+.site-section-heading.w-border h2,
+.site-section-heading.w-border h3 {
   position: relative;
   padding-bottom: 20px;
   display: inline-block;
 }
-.site-section-heading.w-border h2:after, .site-section-heading.w-border h3:after {
+.site-section-heading.w-border h2:after,
+.site-section-heading.w-border h3:after {
   position: absolute;
   content: "";
   width: 70px;
@@ -1390,13 +1393,13 @@ SWIPER FOR ALBUM RELEASES
   background: #ffffff;
 }
 
-.site-section-heading.w-border.text-center h2:after, .site-section-heading.w-border.text-center h3:after {
+.site-section-heading.w-border.text-center h2:after,
+.site-section-heading.w-border.text-center h3:after {
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-
 
 .team-member {
   position: relative;
@@ -1618,7 +1621,7 @@ a.payment-service {
   /* border: 2px solid #8899bb; */
   color: #ffffff;
   /* padding-left: 1px; */
-  padding-right, padding-top, padding-bottom: 3px;
+  padding: 3px;
 }
 a.payment-service:hover {
   background-color: #c87137;
