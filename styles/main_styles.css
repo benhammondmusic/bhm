@@ -1104,6 +1104,7 @@ Contact
 .contact_form_cont {
   display: block;
   width: 100%;
+  height: 100%;
   /* margin-top: 59px; */
 }
 .contact_input {
@@ -1614,9 +1615,6 @@ h2.list-section-heading {
 LIVE STREAM
 *********************************/
 
-.payment-options {
-  /* background-color: #cccccc; */
-}
 a.payment-service {
   /* border: 2px solid #8899bb; */
   color: #ffffff;
