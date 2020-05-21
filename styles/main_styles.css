@@ -1060,8 +1060,8 @@ Contact
 *********************************/
 
 .contact {
-  padding-top: 71px;
-  padding-bottom: 105px;
+  /* padding-top: 71px; */
+  /* padding-bottom: 105px; */
 }
 .contact_title {
   font-size: 36px;
@@ -1152,19 +1152,19 @@ Contact
   color: #000000;
 }
 .contact_text {
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 .contact_info_list {
-  margin-top: 84px;
+  /* margin-top: 84px; */
   padding-left: 13px;
 }
 .contact_info_list ul li {
   font-size: 16px;
   color: #ffffff;
 }
-.contact_info_list ul li:not(:last-of-type) {
+/* .contact_info_list ul li:not(:last-of-type) {
   margin-bottom: 24px;
-}
+} */
 .contact_info_list ul li > div:first-child > div {
   width: 96px;
   padding-right: 20px;

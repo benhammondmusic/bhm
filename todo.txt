@@ -3,7 +3,7 @@ TODO: edit FAQs
 TODO: add press reviews
 
 TODO: fix parralax in safari. maybe because of animate? 
-works on: shows
+works sometimes on: shows WORKING?? test for real on iphone
 
 TODO: add email to every footer
 TODO: add preferred vendor venues. maybe on VENUE page? 
