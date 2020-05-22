@@ -5,15 +5,9 @@ TODO: add links and names to press reviews
 TODO: fix parralax in safari. maybe because of animate? 
 works sometimes on: shows WORKING?? test for real on iphone
 
-TODO: add email to every footer
-TODO: add preferred vendor venues. maybe on VENUE page? 
-TODO: add recommended vendors page?
-TODO: add "USES" page, music equipemtn, instruments, software/apps/tools/ add links for private consulation 
-TODO: add other musicians mini-bios, links etc
-TODO: add social media in contact section, different color etc than in footer
 
 TODO: add small party / wedding pics to ends of FAQ sections
-TODO: add lyrics for original songs? chord charts?
+
 TODO: redo all titles and meta tags. add other meta tags if needed, not spammy?
 TODO: add google tracker?
 TODO: add live-stream only to bandsintown script
@@ -26,3 +20,9 @@ FINAL DEPLOYMENT
 TODO: change .htaccess redirect (for https)
 
 
+ADD LATER AFTER SITE LAUNCHED
+TODO: add preferred vendor venues. maybe on VENUE page? 
+TODO: add recommended vendors page?
+TODO: add "USES" page, music equipemtn, instruments, software/apps/tools/ add links for private consulation 
+TODO: add other musicians mini-bios, links etc
+TODO: add lyrics for original songs? chord charts?
