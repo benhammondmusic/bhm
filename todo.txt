@@ -1,6 +1,6 @@
 
 TODO: edit FAQs 
-TODO: add press reviews
+TODO: add links and names to press reviews
 
 TODO: fix parralax in safari. maybe because of animate? 
 works sometimes on: shows WORKING?? test for real on iphone

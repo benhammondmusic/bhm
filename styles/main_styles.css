@@ -275,7 +275,10 @@ section {
   margin-bottom: 40px;
 }
 .offsetAnchor {
-  padding-top: 50px;
+  padding-top: 75px;
+}
+.offsetAnchorLarge {
+  padding-top: 150px;
 }
 
 /*********************************
@@ -1162,13 +1165,18 @@ Contact
   font-size: 16px;
   color: #ffffff;
 }
-/* .contact_info_list ul li:not(:last-of-type) {
+.contact_info_list ul li:not(:last-of-type) {
   margin-bottom: 24px;
-} */
+}
 .contact_info_list ul li > div:first-child > div {
   width: 96px;
   padding-right: 20px;
   color: #c87137;
+}
+.contact-social a i {
+  color: white;
+  font-size: 2em;
+  margin: 10px;
 }
 
 /*********************************
