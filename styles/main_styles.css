@@ -1062,10 +1062,10 @@ td.song-artist {
 Contact
 *********************************/
 
-.contact {
-  /* padding-top: 71px; */
-  /* padding-bottom: 105px; */
-}
+/* .contact {
+  padding-top: 71px;
+  padding-bottom: 105px;
+} */
 .contact_title {
   font-size: 36px;
   color: #ffffff;
@@ -1154,9 +1154,9 @@ Contact
   background: #ffffff;
   color: #000000;
 }
-.contact_text {
-  /* margin-top: 30px; */
-}
+/* .contact_text {
+  margin-top: 30px;
+} */
 .contact_info_list {
   /* margin-top: 84px; */
   padding-left: 13px;
