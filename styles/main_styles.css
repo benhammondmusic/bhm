@@ -274,11 +274,13 @@ section {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-.offsetAnchor {
-  padding-top: 75px;
+.anchor a {
+  position: absolute;
+  left: 0px;
+  top: -90px;
 }
-.offsetAnchorLarge {
-  padding-top: 150px;
+.anchor {
+  position: relative;
 }
 
 /*********************************
@@ -1478,15 +1480,16 @@ Accordions
   margin-bottom: 17px;
 }
 .accordion {
-  height: 50px;
+  /* height: 50px; */
+  height: 100%;
   width: 100%;
-  background: #c87137;
-  padding-left: 44px;
+  /* background: #c87137; */
+  padding-left: 2em;
   cursor: pointer;
   color: #ffffff;
-  font-size: 14px;
-  line-height: 50px;
-  border: solid 2px #c87137;
+  /* font-size: 14px; */
+  /* line-height: 50px; */
+  /* border: solid 2px #8899bb; */
   -webkit-transition: all 200ms ease;
   -moz-transition: all 200ms ease;
   -ms-transition: all 200ms ease;
@@ -1500,9 +1503,10 @@ Accordions
 .accordion div {
   max-width: 90%;
   overflow: hidden;
-  white-space: nowrap;
+  /* white-space: nowrap; */
+  /* margin-bottom: 1em; */
 }
-.accordion::after {
+.accordion::before {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1512,16 +1516,16 @@ Accordions
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 50%;
+  top: 62%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  right: 26px;
+  left: 5px;
   height: 100%;
   content: "+";
-  font-size: 14px;
+  font-size: 2.5em;
   color: #ffffff;
   -webkit-transition: all 200ms ease;
   -moz-transition: all 200ms ease;
@@ -1529,8 +1533,10 @@ Accordions
   -o-transition: all 200ms ease;
   transition: all 200ms ease;
 }
-.accordion.active::after {
+.accordion.active::before {
   content: "-";
+  font-size: 2.5em;
+  left: 5px;
   color: #c87137;
 }
 .accordion_panel {
@@ -1554,25 +1560,29 @@ Accordions
 FAQ
 *********************************/
 dl.faq-list {
-  font-size: 1.5em;
+  /* font-size: 1.4em; */
+  margin-bottom: 6em;
 }
-h2.list-section-heading {
+h3.list-section-heading {
   background-color: #8899bb;
   padding: 5px;
+  margin-top: 2em;
   text-align: center;
 }
 .faq-list dt {
   font-weight: bold;
-  margin-left: 2em; /* to make it visible */
+  /* margin-left: 1em; */
   margin-top: 1em;
+  font-size: 1.4em;
 }
 .faq-list dd {
   font-style: italic;
-  margin-left: 6em; /* to make it visible */
-  margin-bottom: 3em;
-  /* list-style-image: url("https://placehold.it/10x10"); */
+  font-size: 1.2em;
+  /* margin-left: 2em; */
+  margin-bottom: 1em;
   list-style: square;
-  display: list-item; /* to make it work */
+  display: list-item;
+  list-style-position: inside;
 }
 .faq-list a {
   color: #c87137;
@@ -1584,6 +1594,14 @@ h2.list-section-heading {
 .icon img {
   height: 2em;
   margin-bottom: 0.5em;
+}
+.linkToTop a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: none;
+  border-top: 1px solid white;
+  padding: 2px;
+  margin-bottom: 3em;
 }
 
 /*********************************
