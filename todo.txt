@@ -2,11 +2,6 @@
 TODO: edit FAQs "what forms payment do you accept"
 TODO: add links and names to press reviews
 
-
-TODO: fix parralax in safari. maybe because of animate? 
-works sometimes on: shows WORKING?? test for real on iphone
-
-
 TODO: add small party / wedding pics to ends of FAQ sections
 
 TODO: redo all titles and meta tags. add other meta tags if needed, not spammy?
@@ -22,6 +17,7 @@ TODO: change .htaccess redirect (for https)
 
 
 ADD LATER AFTER SITE LAUNCHED
+TODO: fix parralax in safari. maybe because of animate? 
 TODO: add preferred vendor venues. maybe on VENUE page? 
 TODO: add recommended vendors page?
 TODO: add "USES" page, music equipemtn, instruments, software/apps/tools/ add links for private consulation 
