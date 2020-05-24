@@ -283,6 +283,10 @@ section {
   position: relative;
 }
 
+* {
+  border: 1px solid purple;
+}
+
 /*********************************
 3. Header
 *********************************/

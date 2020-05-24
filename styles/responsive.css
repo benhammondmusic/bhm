@@ -352,9 +352,9 @@
   .footer_list {
     width: 100%;
   }
-  .footer_list:not(:last-child) {
+  /* .footer_list:not(:last-child) {
     margin-bottom: 60px;
-  }
+  } */
 }
 
 /************
