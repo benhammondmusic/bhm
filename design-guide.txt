@@ -9,7 +9,7 @@ Slate Dark background: #343a40
 VOICE:
 1st person, conversational but professional
 
-
+TODO: move text up on index page
 
 TODO: make package pdf 
 TODO: replace dubsado favicon
