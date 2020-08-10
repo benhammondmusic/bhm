@@ -4,14 +4,12 @@ Light Blue: #8899bb
 Translucent Gray: rgba(50, 50, 50, 0.50);
 Slate Dark background: #343a40
 
-
-
 VOICE:
 1st person, conversational but professional
 
-TODO: move text up on index page
 
-TODO: make package pdf 
+
+
 TODO: replace dubsado favicon
 TODO: BOOKING include intro statement, booking video, what's included, party pics 
 TODO: add small party / wedding pics to ends of FAQ sections
