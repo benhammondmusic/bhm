@@ -9,14 +9,16 @@ VOICE:
 
 
 
+TODO: consistent headings between pages
 
-TODO: replace dubsado favicon
-TODO: BOOKING include intro statement, booking video, what's included, party pics 
+TODO: BOOKING condense intro statement, add booking video, what's included, party pics 
 TODO: add small party / wedding pics to ends of FAQ sections
 
 TODO: redo all titles and meta tags. add other meta tags if needed, not spammy?
-TODO: add google tracker?
-TODO: add live-stream only to bandsintown script
+
+
+
+
 TODO: add other pages to mobile menu bar
 TODO: add "top" arrow 
 
@@ -27,6 +29,10 @@ TODO: change .htaccess redirect (for https)
 
 
 ADD LATER AFTER SITE LAUNCHED
+TODO: add google tracker?
+TODO: FAQ - link to best selling packages
+TODO: add live-stream only to bandsintown script
+TODO: replace dubsado favicon
 TODO: fix parralax in safari. maybe because of animate? 
 TODO: add preferred vendor venues. maybe on VENUE page? 
 TODO: add recommended vendors page?

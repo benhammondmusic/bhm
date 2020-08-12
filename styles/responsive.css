@@ -25,9 +25,12 @@
 1. 1600px
 ************/
 
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 2600px) {
   .home_title h1 {
     font-size: 82px;
+  }
+  .artist_image_col {
+    margin-top: 50px;
   }
 }
 
