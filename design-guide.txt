@@ -8,27 +8,22 @@ VOICE:
 1st person, conversational but professional
 
 
-
-TODO: consistent headings between pages
-
-TODO: BOOKING condense intro statement, add booking video, what's included, party pics 
+TODO: BOOKING condense intro statement, party pics 
 TODO: add small party / wedding pics to ends of FAQ sections
 
 TODO: redo all titles and meta tags. add other meta tags if needed, not spammy?
 
 
-
-
 TODO: add other pages to mobile menu bar
-TODO: add "top" arrow 
+ 
 
-TODO: center footer on small formating
 
 FINAL DEPLOYMENT
 TODO: change .htaccess redirect (for https)
 
 
 ADD LATER AFTER SITE LAUNCHED
+TODO: add "top" arrow
 TODO: add google tracker?
 TODO: FAQ - link to best selling packages
 TODO: add live-stream only to bandsintown script
