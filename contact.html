@@ -10,9 +10,9 @@
     <!-- PREVENT WHITE FLASH IN IFRAME -->
     <script>
       (function () {
-        var div = document.createElement("div"),
-          ref = document.getElementsByTagName("base")[0] || document.getElementsByTagName("script")[0];
-        div.innerHTML = "&shy;<style> iframe { visibility: hidden; } </style>";
+        var div = document.createElement('div'),
+          ref = document.getElementsByTagName('base')[0] || document.getElementsByTagName('script')[0];
+        div.innerHTML = '&shy;<style> iframe { visibility: hidden; } </style>';
         ref.parentNode.insertBefore(div, ref);
         window.onload = function () {
           div.parentNode.removeChild(div);
@@ -132,9 +132,7 @@
                   </li>
                   <li class="d-flex flex-row align-items-center justify-content-start">
                     <div>
-                      <div>
-                        Email:
-                      </div>
+                      <div>Email:</div>
                     </div>
                     <div>
                       <p>
@@ -177,11 +175,11 @@
 
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.14/iframeResizer.min.js"></script>
 
-                <iframe src="https://hello.dubsado.com:443/public/form/view/593a04695e0a35791fc3579e" frameborder="0" style="width: 1px; min-width: 100%; height: 1300px; min-height: 100%; visibility: hidden;" onload="this.style.visibility='visible';"></iframe>
+                <iframe src="https://hello.dubsado.com:443/public/form/view/593a04695e0a35791fc3579e" frameborder="0" style="width: 1px; min-width: 100%; height: 1300px; min-height: 100%; visibility: hidden" onload="this.style.visibility='visible';"></iframe>
 
                 <script>
                   setTimeout(function () {
-                    iFrameResize({ checkOrigin: false, heightCalculationMethod: "taggedElement" });
+                    iFrameResize({ checkOrigin: false, heightCalculationMethod: 'taggedElement' });
                   }, 30);
                 </script>
 
@@ -208,9 +206,7 @@
           <div class="newsletter_container">
             <div class="anchor">
               <a id="contact_section">&nbsp;</a>
-              <div class="newsletter_title">
-                Join the Mailing List
-              </div>
+              <div class="newsletter_title">Join the Mailing List</div>
             </div>
             <!-- Begin Mailchimp Signup Form -->
             <div id="mc_embed_signup">
@@ -222,7 +218,7 @@
                     <input type="email" value="" name="EMAIL" class="email newsletter_input" id="mce-EMAIL" required="required" />
                   </label>
                   <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                  <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                  <div style="position: absolute; left: -5000px" aria-hidden="true">
                     <input type="text" name="b_24021f91024f3c0e90c50eaf3_dc677a6554" tabindex="-1" value="" />
                   </div>
 
@@ -235,9 +231,7 @@
           <!-- Connect -->
           <div class="align-items-center d-flex flex-sm-row flex-column ml-xl-auto">
             <div class="social_container">
-              <div class="social_title">
-                Connect
-              </div>
+              <div class="social_title">Connect</div>
 
               <div class="social">
                 <ul class="d-flex flex-row align-items-center justify-content-start">
@@ -255,9 +249,7 @@
             </div>
 
             <div class="social_container">
-              <div class="social_title">
-                Listen
-              </div>
+              <div class="social_title">Listen</div>
 
               <div class="social">
                 <ul class="d-flex flex-row align-items-center justify-content-start">
@@ -290,7 +282,7 @@
             <div class="footer_list">
               <div class="footer_list_title">More</div>
               <ul>
-                <li><a href="#">Important</a></li>
+                <li><a href="https://benhammond.tech">Blog</a></li>
                 <li><a href="live.html">Live-Streaming</a></li>
                 <li><a href="songlist.html">Song List</a></li>
                 <li><a href="faq.html">FAQ</a></li>
@@ -304,7 +296,7 @@
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             Copyright &copy; <span id="currentYear">2020</span>
             <script>
-              document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+              document.getElementById('currentYear').innerHTML = new Date().getFullYear();
             </script>
             All rights reserved | Template: <a href="https://colorlib.com">Colorlib</a> | Site Design and Development: <a href="mailto:hello@benhammondmusic.com">Ben Hammond</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
