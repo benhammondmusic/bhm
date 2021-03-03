@@ -1,0 +1,3631 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ben Hammond - Song List</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Ben Hammond Song Builder" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="styles/main_styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/responsive.css" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Cabin:400,600");
+      .container {
+        max-width: 500px;
+        padding: 80px 1.5rem;
+        margin: 0 auto;
+      }
+
+      .head {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: 600;
+        border-bottom: 1px solid #d6d6d6;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+      }
+
+      .count {
+        padding: 0.3rem;
+        border-radius: 1rem;
+        font-size: 1rem;
+        margin-left: 0.5rem;
+        margin-top: -2rem;
+        min-width: 1.5rem;
+        line-height: 1.2;
+        text-align: center;
+        color: white;
+        background: #e27;
+      }
+
+      .list__item {
+        display: block;
+        padding: 1rem;
+        margin: 0 0 1rem 0;
+        background: white;
+        border-radius: 1rem;
+        color: inherit;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+      }
+      .list__item:hover {
+        color: #e27 !important;
+        box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+      }
+
+      .album {
+        font-size: 1.25rem;
+        color: inherit !important;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .meta {
+        display: -webkit-box;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 0.9rem;
+        color: dimgrey;
+      }
+      .meta > div {
+        padding-right: 0.5rem;
+      }
+      .meta > div:not(:last-child):after {
+        content: "·";
+        padding-left: 0.5rem;
+        display: inline-block;
+      }
+
+      .controls {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        margin-bottom: 1rem;
+        color: black;
+      }
+      .controls > div {
+        font-weight: 600;
+      }
+      .controls > * {
+        margin-right: 1rem;
+        color: inherit;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+      }
+      .controls a:hover {
+        color: #e27;
+      }
+      .controls .sort {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: end;
+        align-items: flex-end;
+      }
+      .controls .sort:after {
+        display: block;
+        opacity: 0;
+        content: "";
+        margin-left: 0.25rem;
+        font-family: "Material Icons";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: "liga";
+      }
+      .controls .sort.asc,
+      .controls .sort.desc {
+        color: #e27;
+      }
+      .controls .sort.asc:after {
+        opacity: 1;
+        content: "arrow_drop_up";
+      }
+      .controls .sort.desc:after {
+        opacity: 1;
+        content: "arrow_drop_down";
+      }
+
+      .tags {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: baseline;
+        align-items: baseline;
+        flex-wrap: wrap;
+        margin-bottom: 0.75rem;
+      }
+      .tags div {
+        font-weight: 600;
+        margin-right: 0.5rem;
+      }
+      .tags .tag {
+        display: -webkit-box;
+        display: flex;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
+        color: white;
+        background: #999999;
+        padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+      .tags .tag:after {
+        content: "x";
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        max-width: 0;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+      }
+      .tags .tag.active:after {
+        opacity: 1;
+        visibility: visible;
+        max-width: 2rem;
+        margin-left: 0.4rem;
+      }
+      .tags .tag:hover,
+      .tags .tag.active {
+        background: #e27;
+      }
+    </style>
+
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="icons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="icons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="icons/favicon-16x16.png" sizes="16x16" />
+    <meta name="application-name" content="Ben Hammond Music" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="icons/mstile-144x144.png" />
+  </head>
+
+  <body>
+    <div class="super_container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header_content d-flex flex-row align-items-center justify-content-end">
+          <div class="logo">
+            <a href="index.html"><img src="images/logo.svg" alt="Ben Hammond Logo" height="70" /></a>
+          </div>
+          <nav class="main_nav">
+            <ul class="d-flex flex-row align-items-start justify-content-start">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shows.html">Shows</a></li>
+              <li><a href="music.html">Music</a></li>
+              <li><a href="booking.html">Booking</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="hamburger ml-auto">
+            <div class="d-flex flex-column align-items-end justify-content-between">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Menu -->
+
+      <div class="menu">
+        <div>
+          <div class="menu_overlay"></div>
+          <div class="menu_container d-flex flex-column align-items-start justify-content-center">
+            <nav class="menu_nav">
+              <ul class="d-flex flex-column align-items-start justify-content-start">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shows.html">Shows</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Home -->
+
+      <div class="home music">
+        <div class="home_inner">
+          <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/contact.jpg" data-speed="0.8"></div>
+          <div class="home_container">
+            <div class="home_content">
+              <div class="home_subtitle">Ben Hammond</div>
+              <div class="home_title"><h1>Song List</h1></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SONGLIST -->
+
+      <div class="site-section">
+        <div class="container" data-aos="fade-up">
+          <div class="row">
+            <div class="site-section-heading text-center w-border col-md-12 mx-auto">
+              <h2 class="m-3">Song List</h2>
+              <p>The evergrowing list of songs in Ben's repertoire. Check back as songs are constantly added, and remember that many <a href="contact.htm#contact_form_section">wedding packages</a> include Ben learning and arranging songs specifically for your event.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 col-lg-8 m-10 mb-5 mb-lg-5 mx-auto">
+              <div class="container" id="albums">
+                <div class="head">British Bangers! <span class="count"></span></div>
+                <div class="tags">
+                  <div>Filter by:</div>
+                  <div class="tag filter" data-filter="1993">'93</div>
+                  <div class="tag filter" data-filter="1994">'94</div>
+                  <div class="tag filter" data-filter="1995">'95</div>
+                  <div class="tag filter" data-filter="1996">'96</div>
+                </div>
+                <div class="controls">
+                  <div>Sort by:</div>
+                  <a class="sort" href="javascript:void(0)" data-sort="album">Album</a>
+                  <a class="sort" href="javascript:void(0)" data-sort="songartist">Artist</a>
+                  <a class="sort" href="javascript:void(0)" data-sort="date">Date</a>
+                </div>
+                <div class="list">
+                  <a class="list__item" href="javascript:void(0)">
+                    <div class="album">Definately Maybe</div>
+                    <div class="meta">
+                      <div class="songartist">Oasis</div>
+                      <div class="date">2002</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-lg-8 m-10 mb-5 mb-lg-5 mx-auto">
+              <table id="sortable_table" class="songlist_table">
+                <thead>
+                  <tr style="cursor: pointer;">
+                    <th onclick="sortTable(0);">Song Artist<span class="sortorder">▼</span></th>
+                    <th onclick="sortTable(1);">Song Title</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="song-artist">4 Non Blondes</td>
+                    <td class="song-title">What's Up</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">311 / The Cure</td>
+                    <td class="song-title">Love Song</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">ABBA</td>
+                    <td class="song-title">Dancing Queen</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ace of Base</td>
+                    <td class="song-title">The Sign</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Adam Sandler</td>
+                    <td class="song-title">I Wanna Grow Old with You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Adele</td>
+                    <td class="song-title">One and Only</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Adele</td>
+                    <td class="song-title">Rolling in the Deep</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Adele / Bob Dylan</td>
+                    <td class="song-title">To Make You Feel My Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Al Green</td>
+                    <td class="song-title">Let's Stay Together</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Al Green</td>
+                    <td class="song-title">Love and Happiness</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Alabama Shakes</td>
+                    <td class="song-title">Don't Wanna Fight</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Alanis Morissette</td>
+                    <td class="song-title">All I Really Want</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Alanis Morissette</td>
+                    <td class="song-title">You Oughta Know</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Alex Clare</td>
+                    <td class="song-title">Too Close</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">American Authors</td>
+                    <td class="song-title">Best Day of My Life</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Amos Lee</td>
+                    <td class="song-title">Arms of a Woman</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Amos Lee</td>
+                    <td class="song-title">Keep It Loose Keep It Tight</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Amos Lee</td>
+                    <td class="song-title">Simple Things</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Amos Lee</td>
+                    <td class="song-title">Sweet Pea</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Amos Lee</td>
+                    <td class="song-title">Sympathize</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Amy Winehouse</td>
+                    <td class="song-title">Back to Black</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Amy Winehouse</td>
+                    <td class="song-title">Just Friends</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Amy Winehouse</td>
+                    <td class="song-title">Rehab</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Amy Winehouse</td>
+                    <td class="song-title">You Know I'm No Good</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Amy Winehouse / Mark Ronson</td>
+                    <td class="song-title">Valerie</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Anderson .Paak</td>
+                    <td class="song-title">Come Down</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Andy Samberg</td>
+                    <td class="song-title">Lonely Island (On A Boat) feat T-Pain</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ani Difranco</td>
+                    <td class="song-title">32 Flavors</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Ani Difranco</td>
+                    <td class="song-title">Both Hands</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ani Difranco</td>
+                    <td class="song-title">Little Plastic Castle</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ani DiFranco</td>
+                    <td class="song-title">Untouchable Face</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ani Difranco</td>
+                    <td class="song-title">You Had Time</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Animals</td>
+                    <td class="song-title">House of the Rising Sun</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Anne Murray</td>
+                    <td class="song-title">Could I Have This Dance</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Anouk</td>
+                    <td class="song-title">Sacrifice Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Backstreet Boys</td>
+                    <td class="song-title">I Want It That Way</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The Band</td>
+                    <td class="song-title">Cripple Creek</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The Band</td>
+                    <td class="song-title">The Weight</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bangles</td>
+                    <td class="song-title">Walk Like an Egyptian</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Across the Universe</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">All You Need Is Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Because</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=OQEygZGEjCk" title="Watch on Youtube">Blackbird / Bye Bye Blackbird</a></td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Abbey Road (Entire Album)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=X7LAwpQXjS8" title="Watch on Youtube">Come Together / Dear Prudence</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Something</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Maxwell's Silver Hammer</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Oh! Darling</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Octopus's Garden</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">I Want You (She's So Heavy)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Here Comes the Sun</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Because</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title"><i>B-Side Medley:</i>You Never Give Me Your Money</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">B-Side Medley: Sun King</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">B-Side Medley: Mean Mr. Mustard</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">B-Side Medley: Polythene Pam</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">B-Side Medley: She Came In Through The Bathroom Window</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">B-Side Medley: Golden Slumbers</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">B-Side Medley: Carry That Weight</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">B-Side Medley: The End</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">B-Side Medley: Her Majesty</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Help!</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Don't Let Me Down</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">When I Saw Her Standing There</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Yesterday</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Hey Jude</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">I Saw Her Standing There</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">I Wanna Hold Your Hand</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">In My Life</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Let It Be</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Obladi Oblada</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles</td>
+                    <td class="song-title">Rocky Raccoon</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles / Stevie Wonder</td>
+                    <td class="song-title">We Can Work It Out</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beatles / George Harrison</td>
+                    <td class="song-title">While My Guitar Gently Weeps</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bee-Gees</td>
+                    <td class="song-title">Stayin' Alive</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Beck</td>
+                    <td class="song-title">Girl</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beck</td>
+                    <td class="song-title">Where It's At</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Harper</td>
+                    <td class="song-title">Happy Ever After Is In Your Eyes</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Harper</td>
+                    <td class="song-title">Sexual Healing</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Ben Harper</td>
+                    <td class="song-title">Steal My Kisses</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben E. King</td>
+                    <td class="song-title">Stand By Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beres Hammond</td>
+                    <td class="song-title">I Could Beat Myself</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beyonce ft/ Jay-Z</td>
+                    <td class="song-title">Crazy in Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Beyonce</td>
+                    <td class="song-title">Single Ladies</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Big Wild ft. Rationale</td>
+                    <td class="song-title">Sixes to Nines</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bill Withers</td>
+                    <td class="song-title">Ain't No Sunshine</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bill Withers</td>
+                    <td class="song-title">Just the Two of Us</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bill Withers</td>
+                    <td class="song-title">Lean on Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bill Withers</td>
+                    <td class="song-title">Use Me Up</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Billy Joel</td>
+                    <td class="song-title">Piano Man</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Billy Joel</td>
+                    <td class="song-title">She's Got a Way</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Biz Markie</td>
+                    <td class="song-title">Just a Friend</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Black Eyed Peas</td>
+                    <td class="song-title">Boom Boom Pow</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The Black Keys</td>
+                    <td class="song-title">Tighten Up</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Blackstreet ft. Dr Dre</td>
+                    <td class="song-title">No Diggity</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Blondie</td>
+                    <td class="song-title">Heart of Glass</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Blood Sweat and Tears</td>
+                    <td class="song-title">Spinning Wheel</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Blue Swede</td>
+                    <td class="song-title">Hooked on a Feelin'</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Blues Traveler</td>
+                    <td class="song-title">But Anyway</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Blues Traveler</td>
+                    <td class="song-title">Run Around</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Bob Carlisle</td>
+                    <td class="song-title">Butterfly Kisses</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Bob Dylan</td>
+                    <td class="song-title">All Along The Watchtower</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bob Dylan</td>
+                    <td class="song-title">Forever Young</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bob Dylan</td>
+                    <td class="song-title">To Make You Feel My Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bob Marley</td>
+                    <td class="song-title">I Shot the Sheriff</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bob Marley</td>
+                    <td class="song-title">Jammin'</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bob Marley</td>
+                    <td class="song-title">No Woman No Cry</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bob Marley</td>
+                    <td class="song-title">Redemption Song</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bob Marley</td>
+                    <td class="song-title">Stir It Up</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bob Marley</td>
+                    <td class="song-title">Three Little Birds</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bob Marley</td>
+                    <td class="song-title">Waiting in Vain</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Bob Seger</td>
+                    <td class="song-title">Old Time Rock n Roll</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bob Seger</td>
+                    <td class="song-title">Hollywood Nights</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bobby McFerrin</td>
+                    <td class="song-title">Don't Worry Be Happy</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bon Iver</td>
+                    <td class="song-title">Holocene</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bon Jovi</td>
+                    <td class="song-title">Wanted (Dead or Alive)</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Bonnie Rait</td>
+                    <td class="song-title">I Can't Make You Love Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bonnie Rait</td>
+                    <td class="song-title">Something To Talk About</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Boyz II Men</td>
+                    <td class="song-title">I'll Make Love to You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Boyz II Men</td>
+                    <td class="song-title">If I Ever Fall In Love Again</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Brad Paisley</td>
+                    <td class="song-title">Alcohol</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Brad Paisley</td>
+                    <td class="song-title">World</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Brett Young / Boyce Avenue</td>
+                    <td class="song-title">In Case You Didn't Know</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bright Eyes</td>
+                    <td class="song-title">First Day of My Life</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Brothers Osbourne</td>
+                    <td class="song-title">Pushin' Up Daisies</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bruce Springsteen</td>
+                    <td class="song-title">Dancing in the Dark</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bruce Springsteen</td>
+                    <td class="song-title">Glory Days</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bruno Mars</td>
+                    <td class="song-title">Grenade</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bruno Mars</td>
+                    <td class="song-title">Locked Out Of Heaven</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bruno Mars</td>
+                    <td class="song-title">Marry You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bruno Mars / Mark Ronson</td>
+                    <td class="song-title">Uptown Funk / Chameleon</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bruno Mars</td>
+                    <td class="song-title">When I Was Your Man</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Bryan Adams</td>
+                    <td class="song-title">Everything I Do</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Bryan Adams</td>
+                    <td class="song-title">Summer of '69</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Buddy Holly</td>
+                    <td class="song-title">Everyday</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Buffalo Springfield</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=RyDdn9WGQDQ" title="Watch on Youtube">For What It's Worth</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Cake</td>
+                    <td class="song-title">Stickshifts and Safety Belts</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Cage the Elephant</td>
+                    <td class="song-title">Ain't No Rest for the Wicked</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Carly Ray Jepsen</td>
+                    <td class="song-title">Call Me Maybe</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Cary Brothers</td>
+                    <td class="song-title">Blue Eyes</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Cat Power</td>
+                    <td class="song-title">Sea of Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Cat Stevens</td>
+                    <td class="song-title">Cat Stevens</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Cat Stevens</td>
+                    <td class="song-title">Wild World</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">CCR</td>
+                    <td class="song-title">Green River</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">CCR / Screamin Jay Hawkins / Nina Simone</td>
+                    <td class="song-title">I Put A Spell On You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">CCR / Tina Turner</td>
+                    <td class="song-title">Proud Mary (Rollin on the River)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">CCR</td>
+                    <td class="song-title">Suzie-Q</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Celine Dion</td>
+                    <td class="song-title">Because You Loved Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The Chainsmokers ft Halsey</td>
+                    <td class="song-title">Closer</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Cheap Trick</td>
+                    <td class="song-title">I Want You To Want Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Chris Brown</td>
+                    <td class="song-title">Yeah 3x</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Christina Perry</td>
+                    <td class="song-title">A Thousand Years</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Cee-Lo</td>
+                    <td class="song-title">F*** You! (Forget You!)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Chris Isaac</td>
+                    <td class="song-title">Wicked Game</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Chris Stapleton</td>
+                    <td class="song-title">Tennessee Whiskey</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Chuck Berry</td>
+                    <td class="song-title">Cest la Vie</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Coldplay</td>
+                    <td class="song-title">Don't Panic</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Coldplay / Boyce Avenue</td>
+                    <td class="song-title">Sky Full Of Stars</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Coldplay</td>
+                    <td class="song-title">Yellow</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Collective Soul</td>
+                    <td class="song-title">Shine</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Coolio</td>
+                    <td class="song-title">Gangsta's Paradise</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Counting Crows</td>
+                    <td class="song-title">Mr Jones</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The Cowsills</td>
+                    <td class="song-title">The Rain The Park And Other Things</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Cranberries</td>
+                    <td class="song-title">Linger</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Cranberries</td>
+                    <td class="song-title">Zombie</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The Cure / 311</td>
+                    <td class="song-title">Love Song</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Cyndi Lauper</td>
+                    <td class="song-title">Time After Time</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Daft Punk</td>
+                    <td class="song-title">Get Lucky</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Damien Rice</td>
+                    <td class="song-title">Amie</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Damien Rice</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=e53UTbXHt5M" title="Watch on Youtube">Blower's Daughter</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Damien Rice</td>
+                    <td class="song-title">Cannonball</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dan and Shay</td>
+                    <td class="song-title">From the Ground Up</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dave Matthews</td>
+                    <td class="song-title">#41</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dave Matthews</td>
+                    <td class="song-title">Ants Marching</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Dave Matthews</td>
+                    <td class="song-title">Satellite</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dave Matthews</td>
+                    <td class="song-title">So Much To Say</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dave Matthews</td>
+                    <td class="song-title">Crash Into Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dave Matthews</td>
+                    <td class="song-title">Tripping Billies</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dave Matthews</td>
+                    <td class="song-title">You and Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">David Bowie</td>
+                    <td class="song-title">Dance Magic Dance (Labyrinth)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">David Bowie</td>
+                    <td class="song-title">Changes</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">David Bowie</td>
+                    <td class="song-title">Heroes</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">David Bowie ft. Stevie Ray Vaughn</td>
+                    <td class="song-title">Let's Dance</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">David Bowie / Nirvana</td>
+                    <td class="song-title">Man Who Sold the World</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">David Bowie</td>
+                    <td class="song-title">Space Oddity</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">David Essex</td>
+                    <td class="song-title">Rock On</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">David Gray</td>
+                    <td class="song-title">Babylon</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Death Cab for Cutie</td>
+                    <td class="song-title">I Will Follow You Into the Dark</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Death Cab for Cutie</td>
+                    <td class="song-title">We Looked Like Giants</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Devil Makes Three</td>
+                    <td class="song-title">All Hail</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dexy</td>
+                    <td class="song-title">Come On Eileen</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dido</td>
+                    <td class="song-title">Thank You</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Dion</td>
+                    <td class="song-title">Wanderer</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dion</td>
+                    <td class="song-title">Runaround Sue</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dire Straits / Indigo Girls</td>
+                    <td class="song-title">Romeo and Juliet</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dire Straits</td>
+                    <td class="song-title">Sultans of Swing</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dirty Heads ft. Rome</td>
+                    <td class="song-title">Lay Me Down</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Don Mclean</td>
+                    <td class="song-title">American Pie</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Donny Hathaway</td>
+                    <td class="song-title">Someday We'll All Be Free</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Doobie Brothers (Michael MacDonald)</td>
+                    <td class="song-title">Taking It To The Streets</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Doors</td>
+                    <td class="song-title">Light My Fire</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Doors</td>
+                    <td class="song-title">People are Strange</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Drifters</td>
+                    <td class="song-title">Under the Boardwalk</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dylan</td>
+                    <td class="song-title">Rainy Day Women "Stone Ya"</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Dylan / Hendrix</td>
+                    <td class="song-title">All Along the Watchtower</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Eagles</td>
+                    <td class="song-title">Hotel California</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Eagles</td>
+                    <td class="song-title">Love Will Keep Us Alive</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Eagles</td>
+                    <td class="song-title">Take it to the Limit</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ed Sheeran</td>
+                    <td class="song-title">Don't</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ed Sheeran</td>
+                    <td class="song-title">Perfect</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ed Sheeran</td>
+                    <td class="song-title">Shape of You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ed Sheeran</td>
+                    <td class="song-title">Tenerife Sea (So In Love)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ed Sheeran</td>
+                    <td class="song-title">Thinking Out Loud</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ed Sharpe and the Magnetic Zeros</td>
+                    <td class="song-title">Home</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Eddie Money</td>
+                    <td class="song-title">Two Tickets To Paradise</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Eels</td>
+                    <td class="song-title">P.S. You Rock My World</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Elle King</td>
+                    <td class="song-title">Ex's and Oh's</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Elton John / Disney</td>
+                    <td class="song-title">Circle of Life</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Elton John</td>
+                    <td class="song-title">Rocketman</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Elton John</td>
+                    <td class="song-title">Tiny Dancer</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Elton John</td>
+                    <td class="song-title">Your Song</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Elvis</td>
+                    <td class="song-title">Blue Suede Shoes</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Elvis / Kina Grannis</td>
+                    <td class="song-title">Can't Help Falling In Love</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Elvis</td>
+                    <td class="song-title">Hound Dog</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Elvis</td>
+                    <td class="song-title">Jailhouse Rock</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Eric Clapton</td>
+                    <td class="song-title">After Midnight</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Eric Clapton</td>
+                    <td class="song-title">Change The World</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Eric Clapton</td>
+                    <td class="song-title">Lay Down Sally</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Eric Clapton</td>
+                    <td class="song-title">Layla</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Eric Clapton</td>
+                    <td class="song-title">Wonderful Tonite</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Eric Hutchinson</td>
+                    <td class="song-title">OK It's Alright</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Etta James</td>
+                    <td class="song-title">At Last</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Eurythmics / Marilyn Manson</td>
+                    <td class="song-title">Sweet Dreams (Are Made of These)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Extreme</td>
+                    <td class="song-title">More Than Words</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Fat Freddy's Drop</td>
+                    <td class="song-title">Boondigga</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Fat Freddy's Drop</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=U2tW0CJUfPk" title="Watch on Youtube">Roady</a></td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Fat Freddy's Drop</td>
+                    <td class="song-title">Wandering Eye</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Feist</td>
+                    <td class="song-title">I Feel It All</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Feist</td>
+                    <td class="song-title">1234</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Fiona Apple</td>
+                    <td class="song-title">Criminal</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Flaming Lips</td>
+                    <td class="song-title">Do You Realize???</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Flight of the Conchords</td>
+                    <td class="song-title">Most Beautiful Girl Room</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Flight of the Conchords</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=TF-5ZwDBb5k&feature=related" title="Watch on Youtube">Business Time</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Florida Georgia Line</td>
+                    <td class="song-title">H.O.L.Y.</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Foy Vance ft. Ed Sheeran</td>
+                    <td class="song-title">Guiding Light</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Foy Vance</td>
+                    <td class="song-title">Homebird Sing</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Foo Fighters</td>
+                    <td class="song-title">Big Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Foo Fighters</td>
+                    <td class="song-title">Everlong</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Frankie Valli</td>
+                    <td class="song-title">Oh What A Night!</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Garth Brooks</td>
+                    <td class="song-title">Friends in Low Places</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Garth Brooks</td>
+                    <td class="song-title">Papa Loved Mama</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Garth Brooks</td>
+                    <td class="song-title">Rodeo</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Garth Brooks</td>
+                    <td class="song-title">The Dance</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Garth Brooks</td>
+                    <td class="song-title">The River</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">George Baker</td>
+                    <td class="song-title">Little Green Bag</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">George Ezra</td>
+                    <td class="song-title">Blame It On Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">George Michael</td>
+                    <td class="song-title">Faith</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">George Michael</td>
+                    <td class="song-title">Freedom 90</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">George Straight</td>
+                    <td class="song-title">Cross My Heart</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">George Straight</td>
+                    <td class="song-title">She Thinks I Still Care</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Gerry Rafferty</td>
+                    <td class="song-title">Right Down the Line</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ginuine</td>
+                    <td class="song-title">Pony (Ride It)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Gladys Knight and the Pips</td>
+                    <td class="song-title">Midnight Train to Georgia</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Gloria Gaynor</td>
+                    <td class="song-title">I Will Survive</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Gnarls Barkley</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=YGXfDeYfAg0&feature=related" title="Watch on Youtube">Crazy</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Goo Goo Dolls</td>
+                    <td class="song-title">Iris</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Gorillaz</td>
+                    <td class="song-title">Clint Eastwood</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Gorillaz</td>
+                    <td class="song-title">Feel Good Inc.</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Gotye</td>
+                    <td class="song-title">Heart's A Mess</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Gotye / Kimbra</td>
+                    <td class="song-title">Somebody That I Used To Know</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Grateful Dead</td>
+                    <td class="song-title">Casey Jones</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Grateful Dead</td>
+                    <td class="song-title">Fire on the Mountain</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Grateful Dead</td>
+                    <td class="song-title">Ripple</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Grateful Dead / Simon and Garfunkel / Bob Dylan / Traditional</td>
+                    <td class="song-title">Peggy-O</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Great Big Sea</td>
+                    <td class="song-title">General Taylor</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Green Day</td>
+                    <td class="song-title">Longview</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Hall And Oates</td>
+                    <td class="song-title">You Make My Dreams Come True</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Harry Belafonte</td>
+                    <td class="song-title">Jamaica Farewell</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Harry Belafonte</td>
+                    <td class="song-title">Jump in the Line</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Harry Belafonte</td>
+                    <td class="song-title">Man Smart, Woman Smarter</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Harry Chapin</td>
+                    <td class="song-title">All My Life's A Circle</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Harry Chapin</td>
+                    <td class="song-title">Cat's in the Cradle</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Harry Nillson</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=CE4cjkgWOfc&feature=related" title="Watch on Youtube">Lime in the Coconut</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Hawksley Workman</td>
+                    <td class="song-title">Smoke Baby</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Hawksley Workman</td>
+                    <td class="song-title">Stop Joking Around</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Heartland</td>
+                    <td class="song-title">I Love Her First</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Hootie and Blowfish</td>
+                    <td class="song-title">Let Her Cry</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Hot Chelle Rae</td>
+                    <td class="song-title">Tonight Tonight</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Hozier</td>
+                    <td class="song-title">Cherry Wine</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Huey Lewis</td>
+                    <td class="song-title">Power Of Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Hunter Hayes</td>
+                    <td class="song-title">Wanted</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">INXS</td>
+                    <td class="song-title">I Need You Tonight</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jack Johnson</td>
+                    <td class="song-title">Banana Pancakes</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jack Johnson</td>
+                    <td class="song-title">Better Together</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jack Johnson</td>
+                    <td class="song-title">Do You Remember</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Jack Johnson</td>
+                    <td class="song-title">Flake</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jack Johnson</td>
+                    <td class="song-title">Fortunate Fool</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jack Johnson</td>
+                    <td class="song-title">Sitting Waiting Wishing</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jackson 5</td>
+                    <td class="song-title">I Want You Back</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jackson 5 / Mariah Carey</td>
+                    <td class="song-title">I'll Be There</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">James Arthur</td>
+                    <td class="song-title">Say You Won't Let Go</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">James Blunt</td>
+                    <td class="song-title">You're Beautiful</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">James Taylor</td>
+                    <td class="song-title">Fire and Rain</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">James Taylor</td>
+                    <td class="song-title">You've Got A Friend</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jamie Lidell</td>
+                    <td class="song-title">Multiply</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jason Mraz</td>
+                    <td class="song-title">Beautiful Mess</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Jason Mraz</td>
+                    <td class="song-title">Butterfly</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jason Mraz</td>
+                    <td class="song-title">I'm Yours</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jeff Buckley / Leonard Cohen</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=4C5AZxXgVhQ" title="Watch on Youtube">Hallelujah</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jeff Buckley</td>
+                    <td class="song-title">Last Goodbye</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Jill Scott</td>
+                    <td class="song-title">Long Walk</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jimmy Buffet</td>
+                    <td class="song-title">Breathe In Breathe Out Move On</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jimmy Buffet</td>
+                    <td class="song-title">Cheeseburger in Paradise</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jimmy Buffet</td>
+                    <td class="song-title">Margaritaville</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jimmy Buffet / Dave Matthews and Jack Johnson</td>
+                    <td class="song-title">Pirate Looks At 40</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jim Croce</td>
+                    <td class="song-title">Bad Bad Leroy Brown</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jim Croce</td>
+                    <td class="song-title">Time In A Bottle</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jimi Hendrix</td>
+                    <td class="song-title">Bold As Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jimi Hendrix</td>
+                    <td class="song-title">Wind Cries Mary</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jimi Hendrix / Bob Dylan</td>
+                    <td class="song-title">All Along the Watchtower</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Joe Cocker / The Beatles / Martin Sexton</td>
+                    <td class="song-title">With A Little Help From My Friends</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Joe Jackson</td>
+                    <td class="song-title">Is She Really Going Out with Him?</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Denver</td>
+                    <td class="song-title">Annie's Song</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Denver</td>
+                    <td class="song-title">Country Roads</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Hiatt</td>
+                    <td class="song-title">Have A Little Faith In Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Legend</td>
+                    <td class="song-title">Ordinary People</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Mayer</td>
+                    <td class="song-title">Belief</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">John Mayer</td>
+                    <td class="song-title">Comfortable</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Mayer</td>
+                    <td class="song-title">Gravity</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Mayer</td>
+                    <td class="song-title">I Don't Trust Myself With Loving You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Mayer</td>
+                    <td class="song-title">I'm Gonna Find Another You</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">John Mayer</td>
+                    <td class="song-title">My Stupid Mouth</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Mayer</td>
+                    <td class="song-title">Sucker</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Mayer</td>
+                    <td class="song-title">Slow Dancing in a Burning Room</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Mayer</td>
+                    <td class="song-title">Why Did You Mess with Forever?</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Mayer</td>
+                    <td class="song-title">Your Body Is A Wonderland</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Mellencamp</td>
+                    <td class="song-title">Jack and Diane</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">John Prine</td>
+                    <td class="song-title">Angel From Montgomery</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">John Prine</td>
+                    <td class="song-title">Spanish Pipedream (Blow Up Your TV)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Johnny Cash</td>
+                    <td class="song-title">Folsom Prison Blues</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Johnny Cash</td>
+                    <td class="song-title">Jackson</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Johnny Cash</td>
+                    <td class="song-title">Ring of Fire</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Jose Gonzales / The Knife</td>
+                    <td class="song-title">Heartbeats</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Joss Stone / White Stripes</td>
+                    <td class="song-title">Fell in Love with a Girl</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Journey</td>
+                    <td class="song-title">Don't Stop Believing</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Journey</td>
+                    <td class="song-title">Faithfully</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Justin Bieber</td>
+                    <td class="song-title">Love Yourself</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Justin Bieber</td>
+                    <td class="song-title">Sorry</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Justin Timberlake</td>
+                    <td class="song-title">Can't Stop the Feeling</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Justin Timberlake</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=WbYv0ZWj-zQ" title="Watch on Youtube">SexyBack</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Katy Perry</td>
+                    <td class="song-title">Firework</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Katy Perry</td>
+                    <td class="song-title">I Kissed A Girl</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Katy Perry</td>
+                    <td class="song-title">Last Friday Night</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Kci & Jojoe</td>
+                    <td class="song-title">All My Life</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Keb' Mo</td>
+                    <td class="song-title">Life Is Beautiful</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Keith Urban</td>
+                    <td class="song-title">Somebody Like You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Kenny Chesney</td>
+                    <td class="song-title">Don't Blink</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Kermit the Frog</td>
+                    <td class="song-title">Bein' Green</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The Killers</td>
+                    <td class="song-title">Mr Brightside</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Kina Grannis</td>
+                    <td class="song-title">I Found You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">King Floyd / Angie Stone</td>
+                    <td class="song-title">Groove Me</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Kingston Trio</td>
+                    <td class="song-title">Tom Dooley</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Kip Moore</td>
+                    <td class="song-title">Hey Pretty Girl</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Kodaline</td>
+                    <td class="song-title">The One</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">KT Tunstall</td>
+                    <td class="song-title">Black Horse Cherry Tree</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lady Gaga</td>
+                    <td class="song-title">Poker Face</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lana Del Ray</td>
+                    <td class="song-title">Blue Jeans</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lana Del Ray</td>
+                    <td class="song-title">Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lauryn Hill / Frankie Valli</td>
+                    <td class="song-title">Can't Take My Eyes Off You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lauryn Hill</td>
+                    <td class="song-title">Ex-Factor</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Led Zeppelin</td>
+                    <td class="song-title">All My Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Led Zeppelin</td>
+                    <td class="song-title">Battle Of Evermore</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Led Zeppelin</td>
+                    <td class="song-title">Dyer Maker</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Led Zeppelin</td>
+                    <td class="song-title">Thank You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lee Anne Womack</td>
+                    <td class="song-title">I Hope You Dance</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lenny Kravitz</td>
+                    <td class="song-title">It Ain't Over Til It's Over</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Leon Bridges</td>
+                    <td class="song-title">Comin' Home</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Leon Bridges</td>
+                    <td class="song-title">River</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lionel Ritchie / Enrique Iglesias</td>
+                    <td class="song-title">All Night Long</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lord Huron</td>
+                    <td class="song-title">Fool For Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lord Huron</td>
+                    <td class="song-title">Night We Met</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lorde</td>
+                    <td class="song-title">Royals</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lorde</td>
+                    <td class="song-title">Team</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lou Bega</td>
+                    <td class="song-title">Mambo #5</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lumineers</td>
+                    <td class="song-title">Flowers In Your Hair</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Lumineers</td>
+                    <td class="song-title">Ho Hey (I Belong With You)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Macklemore and Kesha</td>
+                    <td class="song-title">Good Old Days</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Mamas and Papas</td>
+                    <td class="song-title">Monday Monday</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Mamas Papas</td>
+                    <td class="song-title">Dream a Little Dream</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Marc Cohn</td>
+                    <td class="song-title">Walking in Memphis</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Mark Ronson ft. Bruno Mars</td>
+                    <td class="song-title">Uptown Funk</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Maroon 5</td>
+                    <td class="song-title">One More Night</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Maroon 5</td>
+                    <td class="song-title">Wake Up Call</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Martin Sexton</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=EyZFCbwZ2Ts&feature=related" title="Watch on Youtube">Boom Sh-Boom</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Martin Sexton</td>
+                    <td class="song-title">Diggin' You</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Martin Sexton</td>
+                    <td class="song-title">Freedom of the Road</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Martin Sexton</td>
+                    <td class="song-title">Happy</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Martin Sexton</td>
+                    <td class="song-title">Way I Am</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Marvin Gaye / CCR / Tina Turner</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=pXMicZ0TEF8" title="Watch on Youtube">Heard It Grapevine / Love Lockdown</a></td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Marvin Gaye</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=RyDdn9WGQDQ" title="Watch on Youtube">What's Goin On</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Matisyahu</td>
+                    <td class="song-title">One Day</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Matt Gerhardt</td>
+                    <td class="song-title">Gone to California</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Metallica</td>
+                    <td class="song-title">Enter Sandman</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Max</td>
+                    <td class="song-title">Lights Down Low</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Men At Work / Colin Haye</td>
+                    <td class="song-title">Down Under</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Michael Buble</td>
+                    <td class="song-title">Everything</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Michael Buble</td>
+                    <td class="song-title">Home</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Michael Buble / The Drifters</td>
+                    <td class="song-title">Save The Last Dance For Me</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Michael Franti and Spearhead</td>
+                    <td class="song-title">Life Is Better With You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Michael Franti and Spearhead</td>
+                    <td class="song-title">Say Hey</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Michael Jackson</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=Rju8uRup_1g" title="Watch on Youtube">Billie Jean</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Michael Jackson</td>
+                    <td class="song-title">Black or White</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Michael Jackson</td>
+                    <td class="song-title">Man in the Mirror</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Michael Jackson</td>
+                    <td class="song-title">The Way You Make Me Feel</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Milky Chance</td>
+                    <td class="song-title">Stolen Dance</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Monkees / Smash Mouth</td>
+                    <td class="song-title">I'm A Believer</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Montell Jordan</td>
+                    <td class="song-title">This Is How We Do It</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Moody Blues</td>
+                    <td class="song-title">Nights in White Satin</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Movies</td>
+                    <td class="song-title">Ghostbusters</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Mungo Jerry</td>
+                    <td class="song-title">In The Summertime</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Natalie Cole</td>
+                    <td class="song-title">This Will Be (An Everlasting Love)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The National</td>
+                    <td class="song-title">I Need My Girl</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ne-Yo</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=Rju8uRup_1g" title="Watch on Youtube">Closer</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Nelly</td>
+                    <td class="song-title">Hot in Herre</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Neil Diamond</td>
+                    <td class="song-title">Sweet Caroline</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Neil Young</td>
+                    <td class="song-title">Harvest Moon</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Neil Young</td>
+                    <td class="song-title">Heart of Gold</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Nikka Costa</td>
+                    <td class="song-title">Everybody Got Their Somethin'</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Nina Simone / Michael Buble</td>
+                    <td class="song-title">Feelin Good</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Nine Inch Nails</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=Rju8uRup_1g" title="Watch on Youtube">Closer</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Nirvana</td>
+                    <td class="song-title">All Apologies</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Notorious B.I.G.</td>
+                    <td class="song-title">Big Poppa</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Oasis</td>
+                    <td class="song-title">Champagne Supernova</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Oasis</td>
+                    <td class="song-title">Wonderwall</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Old Crow Medicine Show / Dylan / Darius Rucker</td>
+                    <td class="song-title">Wagon Wheel</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Old Dominion</td>
+                    <td class="song-title">Snapback</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">One Direction</td>
+                    <td class="song-title">What Makes You Beautiful</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Otis Redding</td>
+                    <td class="song-title">Sittin on the Dock of the Bay</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Otis Redding</td>
+                    <td class="song-title">These Arms of Mine</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Otis Redding</td>
+                    <td class="song-title">Your Precious Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Outkast</td>
+                    <td class="song-title">Hey Ya</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Outkast</td>
+                    <td class="song-title">I Like The Way You Move</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Outkast</td>
+                    <td class="song-title">Roses</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Paolo Nutini</td>
+                    <td class="song-title">New Shoes</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Paper Kites</td>
+                    <td class="song-title">Bloom</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Passenger</td>
+                    <td class="song-title">Let Her Go</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Paul McCartney Solo / Wings</td>
+                    <td class="song-title">Maybe I'm Amazed</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Paul Simon</td>
+                    <td class="song-title">50 Ways</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Paul Simon</td>
+                    <td class="song-title">Diamonds on the Soles of Her Shoes</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Paul Simon</td>
+                    <td class="song-title">Father and Daughter</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Paul Simon</td>
+                    <td class="song-title">Graceland</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Paul Simon</td>
+                    <td class="song-title">I Know What I Know</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Paul Simon</td>
+                    <td class="song-title">Late in the Evening</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Paul Simon</td>
+                    <td class="song-title">Loves Me Like A Rock</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Paul Simon</td>
+                    <td class="song-title">Me and Julio Down By the Schoolyard</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Paul Simon</td>
+                    <td class="song-title">You Can Call Me Al</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Paula Abdul</td>
+                    <td class="song-title">Straight Up</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Pearl Jam</td>
+                    <td class="song-title">Better Man</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Pearl Jam</td>
+                    <td class="song-title">Black</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Pearl Jam</td>
+                    <td class="song-title">Jeremy</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Peter Gabriel</td>
+                    <td class="song-title">In Your Eyes</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Peter Gabriel</td>
+                    <td class="song-title">Sledgehammer</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Peter Gabriel</td>
+                    <td class="song-title">Solsbury Hill</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Pharrell / Jamie Cullum</td>
+                    <td class="song-title">Frontin'</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Pharrell</td>
+                    <td class="song-title">Happy</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Phil Collins</td>
+                    <td class="song-title">Against All Odds</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Phillip Phillips</td>
+                    <td class="song-title">Gone Gone Gone</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Phillip Phillips</td>
+                    <td class="song-title">Home</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Pink Floyd</td>
+                    <td class="song-title">Money</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Pink Floyd</td>
+                    <td class="song-title">Wish You Were Here</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Plain White T's</td>
+                    <td class="song-title">Hey There Delilah</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The Police</td>
+                    <td class="song-title">Don't Stand So Close To Me</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">The Police</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=oKG_0xYj29U&feature=related" title="Watch on Youtube">Message in a Bottle</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The Police</td>
+                    <td class="song-title">Roxanne</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The Police</td>
+                    <td class="song-title">Walking on the Moon</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Portugal. The Man.</td>
+                    <td class="song-title">Feel It Still</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Postal Service / Iron Wine</td>
+                    <td class="song-title">Such Great Heights</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Prince</td>
+                    <td class="song-title">Cream</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Prince</td>
+                    <td class="song-title">Kiss</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Prince</td>
+                    <td class="song-title">Purple Rain</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Prince</td>
+                    <td class="song-title">When Doves Cry</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">The Proclaimers</td>
+                    <td class="song-title">500 Miles</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Queen</td>
+                    <td class="song-title">Crazy Little Thing Called Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Queen</td>
+                    <td class="song-title">Under Pressure</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Rachel Platten</td>
+                    <td class="song-title">Better Place</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Rachel Platten</td>
+                    <td class="song-title">Stand By You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Radiohead</td>
+                    <td class="song-title">All I Need</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Radiohead</td>
+                    <td class="song-title">Creep</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Radiohead</td>
+                    <td class="song-title">Paranoid Android</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Rage Against the Machine</td>
+                    <td class="song-title">Killing in the Name Of</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Randy Newman</td>
+                    <td class="song-title">You've Got a Friend in Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Randy Travis</td>
+                    <td class="song-title">Deeper Than The Holler</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Randy Travis</td>
+                    <td class="song-title">Forever and Ever Amen</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Rascal Flatts</td>
+                    <td class="song-title">My Wish</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Ray Charles</td>
+                    <td class="song-title">Georgia</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ray Charles</td>
+                    <td class="song-title">Hallelujah I Love Her So</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ray Charles</td>
+                    <td class="song-title">Hit the Road Jack</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ray Charles</td>
+                    <td class="song-title">I Got A Woman</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ray Charles</td>
+                    <td class="song-title">You Don't Know Me</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Ray La Montagne</td>
+                    <td class="song-title">Such A Simple Thing</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ray La Montagne</td>
+                    <td class="song-title">Shelter</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ray LaMontagne</td>
+                    <td class="song-title">Jolene</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ray LaMontagne</td>
+                    <td class="song-title">Trouble</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ray La Montagne</td>
+                    <td class="song-title">You Are The Best Thing</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Red Hot Chili Peppers</td>
+                    <td class="song-title">Under the Bridge</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">RHCP</td>
+                    <td class="song-title">Aeroplane</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">REM</td>
+                    <td class="song-title">Losing My Religion</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">REM</td>
+                    <td class="song-title">Man on the Moon</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Robin Thicke</td>
+                    <td class="song-title">Blurred Lines</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Rod Stewart</td>
+                    <td class="song-title">Forever Young</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Rod Stewart</td>
+                    <td class="song-title">Maggie May</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Rod Stewart</td>
+                    <td class="song-title">Reason to Believe</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Rod Stewart</td>
+                    <td class="song-title">You're In My Heart</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Roger Miller</td>
+                    <td class="song-title">King of the Road</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Rolling Stones</td>
+                    <td class="song-title">Satisfaction</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Romantics</td>
+                    <td class="song-title">What I Like</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Roo Panes</td>
+                    <td class="song-title">Know Me Well</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Roots</td>
+                    <td class="song-title">Seed 2.0</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Roy Orbison</td>
+                    <td class="song-title">You Got It</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Rufus Wainwright</td>
+                    <td class="song-title">Cigarettes and Chocolate Milk</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Rufus Wainwright</td>
+                    <td class="song-title">Instant Pleasure</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Rufus Wainwright</td>
+                    <td class="song-title">Vibrate</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Rupert Holmes</td>
+                    <td class="song-title">(Escape) If You Like Pina Coladas</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Rusted Root</td>
+                    <td class="song-title">Send Me on my Way</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ryan Adams</td>
+                    <td class="song-title">Come Pick Me Up</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Ryan Adams</td>
+                    <td class="song-title">To Be Young</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ryan Adams</td>
+                    <td class="song-title">Winding Wheel</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sam Cooke</td>
+                    <td class="song-title">Don't Know Much About History</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sam Smith</td>
+                    <td class="song-title">Latch (Acoustic Version)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sarah McLachlan</td>
+                    <td class="song-title">Ice Cream</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sara Bareilles</td>
+                    <td class="song-title">Brave</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Scott Keo</td>
+                    <td class="song-title">Owe It All To You (Mother Son Wedding Song)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Scott McReery</td>
+                    <td class="song-title">This Is It</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Screamin' Jay Hawkins / CCR / Nina Simone</td>
+                    <td class="song-title">I Put A Spell On You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Script</td>
+                    <td class="song-title">Breakeven (Falling To Pieces)</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Seal</td>
+                    <td class="song-title">Kiss From A Rose</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Shaggy</td>
+                    <td class="song-title">Wasn't Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sheryl Crow</td>
+                    <td class="song-title">All I Wanna Do</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sheryl Crow</td>
+                    <td class="song-title">Strong Enough</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Simon and Garfunkel</td>
+                    <td class="song-title">Cecilia</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Simon and Garfunkel</td>
+                    <td class="song-title">Homeward Bound</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Simon and Garfunkel</td>
+                    <td class="song-title">Only Living Boy In New York</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Simple Minds (Breakfast Club Soundtrack)</td>
+                    <td class="song-title">Don't You Forget About Me</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Sinead O'Connor</td>
+                    <td class="song-title">Nothing Compares 2 U</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sly Stone</td>
+                    <td class="song-title">If You Want Me To Stay</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Smashing Pumkins</td>
+                    <td class="song-title">1979</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Smashmouth</td>
+                    <td class="song-title">All Star</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Snoop Dogg</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=WbYv0ZWj-zQ" title="Watch on Youtube">Gin and Juice</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Soft Cell</td>
+                    <td class="song-title">Tainted Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Soundgarden</td>
+                    <td class="song-title">Black Hole Sun</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Spin Doctors</td>
+                    <td class="song-title">Two Princes</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Squeeze</td>
+                    <td class="song-title">Tempted</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Squirrel Nut Zippers</td>
+                    <td class="song-title">Got My Own Thing Now</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Stealer's Wheel</td>
+                    <td class="song-title">Stuck in the Middle with You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Steve Earle</td>
+                    <td class="song-title">Galway Girl</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Steve Earle</td>
+                    <td class="song-title">Lonelier Than This</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Steve Miller Band</td>
+                    <td class="song-title">Joker</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Steve Miller Band</td>
+                    <td class="song-title">Rock N Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Stevie Nicks</td>
+                    <td class="song-title">Landslide</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Stevie Ray Vaughn</td>
+                    <td class="song-title">Pride N Joy</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Stevie Wonder</td>
+                    <td class="song-title">Another Star</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Stevie Wonder</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=aLbNF5q5CS4" title="Watch on Youtube">Boogie On Reggae Woman</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Stevie Wonder</td>
+                    <td class="song-title">I Wish</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Stevie Wonder</td>
+                    <td class="song-title">Lately</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Stevie Wonder</td>
+                    <td class="song-title">Livin' For The City</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Stevie Wonder</td>
+                    <td class="song-title">Signed Sealed Delivered</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Stevie Wonder</td>
+                    <td class="song-title">Sir Duke</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Stevie Wonder</td>
+                    <td class="song-title">Superstition</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Stevie Wonder</td>
+                    <td class="song-title">Uptight</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Stevie Wonder</td>
+                    <td class="song-title">You Are Sunshine Life</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sting</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=RlZe6n0y1cQ" title="Watch on Youtube">Seven Days</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sting / Eva Cassidy</td>
+                    <td class="song-title">Fields of Gold</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Stone Temple Pilots</td>
+                    <td class="song-title">Interstate Love Song</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">The Strokes</td>
+                    <td class="song-title">Last Night (Last Nite)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sublime</td>
+                    <td class="song-title">54/46</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sublime</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=h0H1vsJ9fgU" title="Watch on Youtube">Doin' Time</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sublime</td>
+                    <td class="song-title">Santeria</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sublime</td>
+                    <td class="song-title">Get Ready</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sublime</td>
+                    <td class="song-title">What I Got</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Sublime</td>
+                    <td class="song-title">Rivers of Babylon</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Sublime</td>
+                    <td class="song-title">Wrong Way</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The Supremes / Phil Collins</td>
+                    <td class="song-title">You Can't Hurry Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Swedish House Mafia</td>
+                    <td class="song-title">Don't You Worry Child</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Talking Heads</td>
+                    <td class="song-title">Burning Down the House</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Talking Heads</td>
+                    <td class="song-title">Once In A Lifetime</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Talking Heads</td>
+                    <td class="song-title">Psycho Killer</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Taylor Swift</td>
+                    <td class="song-title">Shake It Off</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Taylor Swift</td>
+                    <td class="song-title">Trouble</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Taylor Swift</td>
+                    <td class="song-title">You Belong With Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Tears for Fears</td>
+                    <td class="song-title">Everybody Wants to Rule the World</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Temptations</td>
+                    <td class="song-title">My Girl</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Terri Clark</td>
+                    <td class="song-title">Now That I Found You</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Three Dog Night / Randy Newman</td>
+                    <td class="song-title">Mama Told Me Not To Come</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Toadies</td>
+                    <td class="song-title">Possum Kingdom</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Tom Petty</td>
+                    <td class="song-title">American Girl</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Tom Petty</td>
+                    <td class="song-title">Free Fallin</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Tom Petty</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=vZyzkQIqJuU" title="Watch on Youtube">Mary Jane's Last Dance</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Tom Waits</td>
+                    <td class="song-title">Jockey Full of Bourbon</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Tom Waits</td>
+                    <td class="song-title">Johnsburg, IL</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Tom Waits</td>
+                    <td class="song-title">Swordfish Trombone</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Toto</td>
+                    <td class="song-title">Africa</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Trampled by Turtles</td>
+                    <td class="song-title">Alone</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Tracy Chapman</td>
+                    <td class="song-title">Fast Car</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Tracy Chapman</td>
+                    <td class="song-title">Gimme One Reason</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Tracy Chapman</td>
+                    <td class="song-title">Talkin' 'Bout A Revolution</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">trad.</td>
+                    <td class="song-title">Wild Rover</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">trad. / Beach Boys</td>
+                    <td class="song-title">Sloop John B</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Train</td>
+                    <td class="song-title">Hey Soul Sister</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Trey Anastasio / Phish</td>
+                    <td class="song-title">Let Me Lie</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Turtles</td>
+                    <td class="song-title">Happy Together</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">U2</td>
+                    <td class="song-title">All I Want Is You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">U2</td>
+                    <td class="song-title">Mysterious Ways</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">U2</td>
+                    <td class="song-title">One</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">U2</td>
+                    <td class="song-title">Pride</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">U2</td>
+                    <td class="song-title">Still Haven't Found What Im Looking</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">U2</td>
+                    <td class="song-title">With or Without You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">UB40</td>
+                    <td class="song-title">Red Red Wine</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Van Morrison</td>
+                    <td class="song-title">Brown Eyed Girl</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Van Morrison</td>
+                    <td class="song-title">Crazy Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Van Morrison</td>
+                    <td class="song-title">Days Like This</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Van Morrison</td>
+                    <td class="song-title">Into the Mystic</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Van Morrison</td>
+                    <td class="song-title">Moondance</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Van Morrison / Mellencamp</td>
+                    <td class="song-title">Wild Night</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Vance Joy</td>
+                    <td class="song-title">Riptide</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Violent Femmes</td>
+                    <td class="song-title">36-24-36</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Violent Femmes</td>
+                    <td class="song-title">American Music</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Violent Femmes</td>
+                    <td class="song-title">Blister in the Sun</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Violent Femmes</td>
+                    <td class="song-title">Gimme the Car</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Wailin Jennies</td>
+                    <td class="song-title">One Voice</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Wallflowers</td>
+                    <td class="song-title">One Headlight</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The Weeknd</td>
+                    <td class="song-title">Can't Feel My Face</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Weezer</td>
+                    <td class="song-title">(If You're Wondering If I Want You To) I Want You To</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Weezer</td>
+                    <td class="song-title">Undone/Sweater Song</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Whitley</td>
+                    <td class="song-title">I Remember</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">White Stripes / Jack Johnson</td>
+                    <td class="song-title">We're Going To Be Friends</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Whitney Houston</td>
+                    <td class="song-title">I Will Always Love You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Whitney Houston</td>
+                    <td class="song-title">I Wanna Dance With Somebody</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Wilco</td>
+                    <td class="song-title">Handshake Drugs</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Wilco</td>
+                    <td class="song-title">Hate It Here</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Wilco</td>
+                    <td class="song-title">Heavy Metal Drummer</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Wilco</td>
+                    <td class="song-title">Hummingbird</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Wilco</td>
+                    <td class="song-title">Jesus Etc...</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Willie Nelson</td>
+                    <td class="song-title">On The Road Again</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Wings / Paul McCartney</td>
+                    <td class="song-title">Maybe I'm Amazed</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Yael Naim</td>
+                    <td class="song-title">New Soul</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Young the Giant</td>
+                    <td class="song-title">Simplify</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Zac Brown</td>
+                    <td class="song-title">Chicken Fried</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Zac Brown</td>
+                    <td class="song-title">Knee Deep (featuring Jimmy Buffett)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Zac Brown</td>
+                    <td class="song-title">My Old Man</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Zac Brown</td>
+                    <td class="song-title">Whatever It Is</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Love Actually Soundtrack</td>
+                    <td class="song-title">Glasgow Love Theme</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Pachabel</td>
+                    <td class="song-title">Canon in D</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Wagner</td>
+                    <td class="song-title">Wedding March (Here Comes the Bride)</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Duke Ellington</td>
+                    <td class="song-title">Don't Get Around Much...</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Thelonius Monk</td>
+                    <td class="song-title">Round Midnight</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Antonio Carlos Jobim</td>
+                    <td class="song-title">Desafinado</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Miles Davis</td>
+                    <td class="song-title">All Blues</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Antonio Carlos Jobim</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=nEmZcx2b1So" title="Watch on Youtube">Girl From Ipanema</a></td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Ain't Misbehavin'</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">All the Things You Are</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Always (I'll Be Loving You)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">As Time Goes By</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Autumn Leaves</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Beautiful Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Blue Bossa</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Body and Soul</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">But Not For Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=OQEygZGEjCk" title="Watch on Youtube">Bye Bye Blackbird / Blackbird</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Herbie Hancock</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=arh66EIp2Qo" title="Watch on Youtube">Chameleon / Uptown Funk Mashup</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Christmas Song</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">The Meters / Standard</td>
+                    <td class="song-title">Cissy Strut</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Darn That Dream</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Detour Ahead</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Fly Me to the Moon</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Gee Baby Ain't I Good to You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">God Bless the Child</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Good Morning Heartache</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Green Dolphin Street</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Honeysuckle Rose</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">I Got It Bad</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">I'm Beginning to See the Light</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">In the Wee Small Hours</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">It's Only a Paper Moon</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Let's Fall in Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Vince Guaraldi</td>
+                    <td class="song-title">Linus and Lucy (Peanuts Charlie Brown Theme)</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Lullabye of Birdland</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Makin Whoopee</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Misty</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Duke Ellington</td>
+                    <td class="song-title">Mood Indigo</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">My One and Only Love</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Nature Boy</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Nearness of You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Night and Day</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Manhattan Transfer / Standard</td>
+                    <td class="song-title">Nightengale Sang in Berkelly Sq.</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">No Moon At All</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">On the Sunny Side of the Street</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Over the Rainbow</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Satin Doll</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Solitude</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Spring Can Really Hang You Up</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard / Sonny Rollins</td>
+                    <td class="song-title">St Thomas</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Stella By Starlight</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Stormy Monday</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Stormy Weather</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard / Frank Sinatra</td>
+                    <td class="song-title">Strangers In The Night</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard / Gerswhin</td>
+                    <td class="song-title">Summertime</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Sweet Georgia Brown</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Duke Ellington</td>
+                    <td class="song-title">Take the A Train</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">They Can't Take That Away From Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">Till There Was You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Nat King Cole</td>
+                    <td class="song-title">Unforgettable</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Herbie Hancock</td>
+                    <td class="song-title">Watermelon Man</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">We'll Meet Again</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">What a Difference a Day Made</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">What a Wonderful World</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">What is this Thing Called Love</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">When a Man Loves a Woman</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">When I Look in Your Eyes</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Standard</td>
+                    <td class="song-title">White Christmas</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Frank Sinatra / Standard</td>
+                    <td class="song-title">Witchcraft</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Ella Fitzgerald / Standard</td>
+                    <td class="song-title">Summertime</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Another Friend</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Calloused and Curly (Instrumental)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Constellations</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Can't Dream Without You</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Dance Like His Daddy</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Doctor Girl</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Even Though</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=uP2Urpiein0" title="Watch on Youtube">Except for You</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Friction</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Have I Lost You?</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=admXKf8qoWw" title="Watch on Youtube">Hipster Juliet (You Can Tell)</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=3Fqrbf5Wx08" title="Watch on Youtube">Home</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">It's Ok</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Just Like Me</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Kezar (instrumental)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=_mOJbvx7CgI" title="Watch on Youtube">Lemme Know</a></td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=ocSKD9dyPhw" title="Watch on Youtube">Let's Get Alone</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">No History</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Perspective</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Something New</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=NCt8s5ckVTI" title="Watch on Youtube">Start Breathing</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Surely (instrumental)</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=re_GsYef7N0" title="Watch on Youtube">The Collector</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=8QoRRvgv5oY" title="Watch on Youtube">Touch</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title">Umbrella Song</td>
+                  </tr>
+
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=w1kpaSqrQXE" title="Watch on Youtube">Wintergreens (Instrumental)</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=w1kpaSqrQXE" title="Watch on Youtube">When I'm Supposed To</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Ben Hammond</td>
+                    <td class="song-title"><a href="https://www.youtube.com/watch?v=admXKf8qoWw" title="Watch on Youtube">Worst Kind of Perfect</a></td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Christmas</td>
+                    <td class="song-title">Happy Christmas (War Is Over) John Lennon</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Christmas</td>
+                    <td class="song-title">The Christmas Song (Chestnuts Roasting)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Christmas</td>
+                    <td class="song-title">Little Drummer Boy</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Christmas</td>
+                    <td class="song-title">I'm Dreaming of a White Christmas</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Christmas</td>
+                    <td class="song-title">Silent Night</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Christmas</td>
+                    <td class="song-title">Jingle Bell Rock</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Christmas</td>
+                    <td class="song-title">Mary Did You Know?</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Christmas</td>
+                    <td class="song-title">Mele Kalikimaka (Hawaiian Christmas Song)</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Christmas</td>
+                    <td class="song-title">I Wonder As I Wander</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">New Year's Eve</td>
+                    <td class="song-title">Auld Lang Syne</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Christian</td>
+                    <td class="song-title">Great Is Thy Faithfulness</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Christian</td>
+                    <td class="song-title">Pass It On</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">National Anthem</td>
+                    <td class="song-title">O Canada</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">National Anthem</td>
+                    <td class="song-title">The Star-Spangled Banner</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Traditional Jewish Dance / Yossi Piamenta</td>
+                    <td class="song-title">Hora - Rikud Rishon Medley: Od Yishama, Yasis Alayich, Siman Tov Mazel Tov</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Traditional Jewish Dance</td>
+                    <td class="song-title">Hora - Hava Nagila</td>
+                  </tr>
+                  <tr>
+                    <td class="song-artist">Yossi Piamenta</td>
+                    <td class="song-title">Asher Bara (Hebrew Lyrics for "Down Under")</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+
+      <footer class="footer">
+        <div class="footer_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
+          <div class="newsletter_container">
+            <div class="anchor">
+              <a id="contact_section">&nbsp;</a>
+              <div class="newsletter_title">
+                Join the Mailing List
+              </div>
+            </div>
+            <!-- Begin Mailchimp Signup Form -->
+            <div id="mc_embed_signup">
+              <form action="https://benhammondmusic.us6.list-manage.com/subscribe/post?u=24021f91024f3c0e90c50eaf3&amp;id=dc677a6554" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter_form" novalidate>
+                <!-- above form need id="newsletter_form" ?? -->
+                <div id="mc_embed_signup_scroll">
+                  <label for="mce-EMAIL">
+                    Your Email Address:<br />
+                    <input type="email" value="" name="EMAIL" class="email newsletter_input" id="mce-EMAIL" required="required" />
+                  </label>
+                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text" name="b_24021f91024f3c0e90c50eaf3_dc677a6554" tabindex="-1" value="" />
+                  </div>
+
+                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter_button" />
+                </div>
+              </form>
+            </div>
+            <!--End mc_embed_signup-->
+          </div>
+          <!-- Connect -->
+          <div class="align-items-center d-flex flex-sm-row flex-column ml-xl-auto">
+            <div class="social_container">
+              <div class="social_title">
+                Connect
+              </div>
+
+              <div class="social">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                  <li>
+                    <a href="https://www.facebook.com/benhammondmusicpage" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/benhammondmusic" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/benhammondmusic" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="social_container">
+              <div class="social_title">
+                Listen
+              </div>
+
+              <div class="social">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                  <li>
+                    <a href="https://open.spotify.com/artist/1q9zbsAcxs9fP7b9G8Y4Qk?si=GZE5O5EoSaCKM99kfeN79w" title="Spotify"><i class="fa fa-spotify" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://music.apple.com/us/artist/ben-hammond/164875823" title="Apple Music"><i class="fa fa-apple" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/benhammondmusicpage" title="Youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer_lists d-flex flex-sm-row align-items-center justify-content-start ml-xl-auto">
+            <div class="footer_list">
+              <div class="footer_list_title">Menu</div>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shows.html">Shows</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="footer_list">
+              <div class="footer_list_title">More</div>
+              <ul>
+                <li><a href="#">Important</a></li>
+                <li><a href="live.html">Live-Streaming</a></li>
+                <li><a href="songlist.html">Song List</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="mailto:hello@benhammondmusic.com">Email Me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="copyright_bar">
+          <span>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy; <span id="currentYear">2020</span>
+            <script>
+              document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+            </script>
+            All rights reserved | Template: <a href="https://colorlib.com">Colorlib</a> | Site Design and Development: <a href="mailto:hello@benhammondmusic.com">Ben Hammond</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="plugins/greensock/TweenMax.min.js"></script>
+    <script src="plugins/greensock/TimelineMax.min.js"></script>
+    <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="plugins/greensock/animation.gsap.min.js"></script>
+    <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/sort.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="js/sort2.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js"></script> -->
+    <script src="https://kit.fontawesome.com/8632e6fb46.js" crossorigin="anonymous" defer></script>
+  </body>
+</html>

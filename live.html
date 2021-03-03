@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ben Hammond Live-Streaming</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Ben Hammond - Colorado Song Builder. Live-Looped, Groove-Oriented Music for " />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="styles/main_styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/responsive.css" />
+
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="icons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="icons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="icons/favicon-16x16.png" sizes="16x16" />
+    <meta name="application-name" content="Ben Hammond Music" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="icons/mstile-144x144.png" />
+  </head>
+
+  <body>
+    <div class="super_container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header_content d-flex flex-row align-items-center justify-content-end">
+          <div class="logo">
+            <a href="index.html"><img src="images/logo.svg" alt="Ben Hammond Logo" height="70" /></a>
+          </div>
+          <nav class="main_nav">
+            <ul class="d-flex flex-row align-items-start justify-content-start">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shows.html">Shows</a></li>
+              <li><a href="music.html">Music</a></li>
+              <li><a href="booking.html">Booking</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="hamburger ml-auto">
+            <div class="d-flex flex-column align-items-end justify-content-between">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Menu -->
+
+      <div class="menu">
+        <div>
+          <div class="menu_overlay"></div>
+          <div class="menu_container d-flex flex-column align-items-start justify-content-center">
+            <nav class="menu_nav">
+              <ul class="d-flex flex-column align-items-start justify-content-start">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shows.html">Shows</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Home -->
+
+      <div class="home">
+        <div class="home_inner">
+          <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/contact.jpg" data-speed="0.8"></div>
+          <div class="home_container">
+            <div class="home_content">
+              <div class="home_subtitle">Ben Hammond</div>
+              <div class="home_title"><h1>Live Streams</h1></div>
+              <div class="home_link"><a href="#PassTheHat">Donate</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Player -->
+
+      <div class="site-section">
+        <div class="container" data-aos="fade-up">
+          <div class="row">
+            <div class="site-section-heading text-center w-border mx-auto">
+              <h2>Latest Live-Stream</h2>
+              <!-- <p></p> -->
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="livestream-container">
+              <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbenhammondmusic%2Fvideos%2F10104599076715327%2F&show_text=0&width=560" width="560" height="315" style="border: none; overflow: hidden;" scrolling="no" frameborder="0" allowTransparency="true" allowfullscreen="true" class="responsive-iframe"></iframe>
+            </div>
+          </div>
+          <p class="mx-auto text-center">
+            <a href="https://www.facebook.com/benhammondmusic/videos_by">More archived live-streams on Facebook</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Next live stream -->
+
+      <div class="site-section">
+        <div class="container" data-aos="fade-up">
+          <div class="row">
+            <div class="site-section-heading text-center w-border col-md-6 mx-auto">
+              <h2>Next Live-Stream</h2>
+              <!-- <p></p> -->
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="artist_text mx-auto mt-5">
+              <ul id="shows" class="shows_list">
+                <!-- this UL gets populated with LIs containing gig info from bandsintown via JS-->
+                <script>
+                  const numberShows = 1;
+                  const streamingOnly = true;
+                </script>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Donations -->
+      <a class="offsetAnchor" id="PassTheHat"></a>
+      <div class="site-section">
+        <div class="container" data-aos="fade-up">
+          <div class="row">
+            <div class="site-section-heading text-center w-border col mx-auto">
+              <h2>Digital Donations</h2>
+              <!-- <p></p> -->
+            </div>
+          </div>
+
+          <div class="payment-options">
+            <div class="row">
+              <!-- <h3>DONATIONS</h3> -->
+
+              <p>Until live music safely returns, I am humbly accepting donations via several different services (listed below). But much more importantly, I welcome you to simply watch, comment and share my live stream concerts. Stay safe!</p>
+
+              <!--item -->
+              <div class="col-md-6 col-lg-6 my-4 my-lg-4">
+                <div class="row">
+                  <div class="col-4">
+                    <a role="button" class="btn btn-light btn-block btn-large payment-button" href="https://checkout.square.site/pay/79b73f8978cc4359a6a17cdef12d52de">
+                      <img src="./payment-icons/creditcard.png" class="payment-icon" />
+                    </a>
+                  </div>
+                  <div class="col-8 my-auto">
+                    <h3><a class="payment-service" href="https://checkout.square.site/pay/79b73f8978cc4359a6a17cdef12d52de">Credit/Debit</a></h3>
+                    <span>via Square (no account needed)</span>
+                  </div>
+                </div>
+              </div>
+              <!-- end item -->
+
+              <!--item -->
+              <div class="col-md-6 col-lg-6 my-4 my-lg-4">
+                <div class="row">
+                  <div class="col-4">
+                    <a role="button" class="btn btn-light btn-block btn-large payment-button" href="https://venmo.com/benhammondmusic">
+                      <img src="./payment-icons/venmo.png" class="payment-icon" />
+                    </a>
+                  </div>
+                  <div class="col-8 my-auto">
+                    <h3><a class="payment-service" href="https://venmo.com/benhammondmusic">Venmo</a></h3>
+                    <span>search @benhammondmusic</span>
+                  </div>
+                </div>
+              </div>
+              <!-- end item -->
+
+              <!--item -->
+              <div class="col-md-6 col-lg-6 my-4 my-lg-4">
+                <div class="row">
+                  <div class="col-4">
+                    <a role="button" class="btn btn-light btn-block btn-large payment-button" href="http://paypal.me/benhammondmusic">
+                      <img src="./payment-icons/paypal.png" class="payment-icon" />
+                    </a>
+                  </div>
+                  <div class="col-8 my-auto">
+                    <h3><a class="payment-service" href="http://paypal.me/benhammondmusic">PayPal</a></h3>
+                    <span>to benjamin.hammond@gmail.com</span>
+                  </div>
+                </div>
+              </div>
+              <!-- end item -->
+
+              <!--item -->
+              <div class="col-md-6 col-lg-6 my-4 my-lg-4">
+                <div class="row">
+                  <div class="col-4">
+                    <a role="button" class="btn btn-light btn-block btn-large payment-button" href="https://www.cash.app/$benhammondmusic">
+                      <img src="./payment-icons/cashapp.png" class="payment-icon" />
+                    </a>
+                  </div>
+                  <div class="col-8 my-auto">
+                    <h3><a class="payment-service" href="https://www.cash.app/$benhammondmusic">CashApp</a></h3>
+                    <span>search $benhammondmusic</span>
+                  </div>
+                </div>
+              </div>
+              <!-- end item -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extra -->
+
+      <div class="extra">
+        <div class="extra_container">
+          <div class="background_image" style="background-image: url(images/extra.jpg);" title="Photo by Scott Braun"></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="extra_content d-flex flex-column align-items-end justify-content-center">
+                  <div class="extra_text">
+                    <p>Available for weddings, private events, holiday parties, outdoor festivals, sessions at your local watering hole, and now *virtual private concerts*.</p>
+                  </div>
+
+                  <div class="extra_title">
+                    <h2>Artist Entertainer</h2>
+                  </div>
+                  <div class="extra_button"><a href="#">Request Booking Info</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+
+      <footer class="footer">
+        <div class="footer_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
+          <div class="newsletter_container">
+            <div class="anchor">
+              <a id="contact_section">&nbsp;</a>
+              <div class="newsletter_title">
+                Join the Mailing List
+              </div>
+            </div>
+            <!-- Begin Mailchimp Signup Form -->
+            <div id="mc_embed_signup">
+              <form action="https://benhammondmusic.us6.list-manage.com/subscribe/post?u=24021f91024f3c0e90c50eaf3&amp;id=dc677a6554" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter_form" novalidate>
+                <!-- above form need id="newsletter_form" ?? -->
+                <div id="mc_embed_signup_scroll">
+                  <label for="mce-EMAIL">
+                    Your Email Address:<br />
+                    <input type="email" value="" name="EMAIL" class="email newsletter_input" id="mce-EMAIL" required="required" />
+                  </label>
+                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text" name="b_24021f91024f3c0e90c50eaf3_dc677a6554" tabindex="-1" value="" />
+                  </div>
+
+                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter_button" />
+                </div>
+              </form>
+            </div>
+            <!--End mc_embed_signup-->
+          </div>
+          <!-- Connect -->
+          <div class="align-items-center d-flex flex-sm-row flex-column ml-xl-auto">
+            <div class="social_container">
+              <div class="social_title">
+                Connect
+              </div>
+
+              <div class="social">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                  <li>
+                    <a href="https://www.facebook.com/benhammondmusicpage" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/benhammondmusic" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/benhammondmusic" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="social_container">
+              <div class="social_title">
+                Listen
+              </div>
+
+              <div class="social">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                  <li>
+                    <a href="https://open.spotify.com/artist/1q9zbsAcxs9fP7b9G8Y4Qk?si=GZE5O5EoSaCKM99kfeN79w" title="Spotify"><i class="fa fa-spotify" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://music.apple.com/us/artist/ben-hammond/164875823" title="Apple Music"><i class="fa fa-apple" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/benhammondmusicpage" title="Youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer_lists d-flex flex-sm-row align-items-center justify-content-start ml-xl-auto">
+            <div class="footer_list">
+              <div class="footer_list_title">Menu</div>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shows.html">Shows</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="footer_list">
+              <div class="footer_list_title">More</div>
+              <ul>
+                <li><a href="#">Important</a></li>
+                <li><a href="live.html">Live-Streaming</a></li>
+                <li><a href="songlist.html">Song List</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="mailto:hello@benhammondmusic.com">Email Me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="copyright_bar">
+          <span>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy; <span id="currentYear">2020</span>
+            <script>
+              document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+            </script>
+            All rights reserved | Template: <a href="https://colorlib.com">Colorlib</a> | Site Design and Development: <a href="mailto:hello@benhammondmusic.com">Ben Hammond</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="plugins/greensock/TweenMax.min.js"></script>
+    <script src="plugins/greensock/TimelineMax.min.js"></script>
+    <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="plugins/greensock/animation.gsap.min.js"></script>
+    <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://kit.fontawesome.com/8632e6fb46.js" crossorigin="anonymous" defer></script>
+    <script src="js/bandsintown.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js"></script>
+    <!-- fills in the show UL with info from bandsintown. maybe move this up the page in line, but make sure  or ?? -->
+    <script>
+      fetchShows("javascript", numberShows);
+    </script>
+  </body>
+</html>

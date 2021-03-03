@@ -1,0 +1,37 @@
+COLORS:
+Orange/Brown Color: #c87137 (200,113,55)
+Light Blue: #8899bb
+Translucent Gray: rgba(50, 50, 50, 0.50);
+Slate Dark background: #343a40
+
+VOICE:
+1st person, conversational but professional
+
+
+TODO: BOOKING condense intro statement, party pics 
+TODO: add small party / wedding pics to ends of FAQ sections
+
+TODO: redo all titles and meta tags. add other meta tags if needed, not spammy?
+
+
+TODO: add other pages to mobile menu bar
+ 
+
+
+FINAL DEPLOYMENT
+TODO: change .htaccess redirect (for https)
+
+
+ADD LATER AFTER SITE LAUNCHED
+TODO: add "top" arrow
+TODO: add google tracker?
+TODO: FAQ - link to best selling packages
+TODO: add live-stream only to bandsintown script
+TODO: replace dubsado favicon
+TODO: fix parralax in safari. maybe because of animate? 
+TODO: add preferred vendor venues. maybe on VENUE page? 
+TODO: add recommended vendors page?
+TODO: add "USES" page, music equipemtn, instruments, software/apps/tools/ add links for private consulation 
+TODO: add other musicians mini-bios, links etc
+TODO: add lyrics for original songs? chord charts?
+
